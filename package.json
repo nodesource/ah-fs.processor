@@ -1,0 +1,34 @@
+{
+  "name": "ah-fs.readfile",
+  "version": "0.0.0",
+  "description": "Analyzes ah-fs data specifically for fs.readFile cases.",
+  "main": "ah-fs.readfile.js",
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nodesource/ah-fs.readfile.git"
+  },
+  "homepage": "https://github.com/nodesource/ah-fs.readfile",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "ah-fs": "0.0.1",
+    "gendo": "~1.0.0",
+    "tape": "~4.6.3"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Thorsten Lorenz",
+    "email": "thlorenz@gmx.de",
+    "url": "http://thlorenz.com"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/nodesource/ah-fs.readfile/blob/master/LICENSE"
+  },
+  "engine": {
+    "node": ">=0.10"
+  }
+}
