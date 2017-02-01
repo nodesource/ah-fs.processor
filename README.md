@@ -15,7 +15,7 @@ Nix, Nada, Nichevo, Nothing --> go away!
 
     npm install ah-fs.readfile
 
-## [API](https://nodesource.github.io/$(basename $PWD)
+## [API](https://nodesource.github.io/)
 
 
 ## License
