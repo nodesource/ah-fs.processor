@@ -12,7 +12,8 @@
   },
   "homepage": "https://github.com/nodesource/ah-fs.readfile",
   "dependencies": {
-    "debug": "~2.6.0"
+    "debug": "~2.6.0",
+    "pretty-ms": "~2.1.0"
   },
   "devDependencies": {
     "ah-fs": "0.0.1",

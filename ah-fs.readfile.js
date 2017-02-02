@@ -1,4 +1,5 @@
 const debug = require('debug')('fs:readfile')
+const prettyMs = require('pretty-ms')
 
 // eslint-disable-next-line no-unused-vars
 function inspect(obj, depth) {
@@ -10,6 +11,43 @@ const readingFileRx = /at Object.fs.readFile/i
 const openedFileRx = /at FSReqWrap.readFileAfterOpen/i
 const statedFileRx = /at FSReqWrap.readFileAfterStat/i
 const closingFileRx = /at ReadFileContext.close/i
+
+function pretty(ns) {
+  return prettyMs(ns * 1E-6, { msDecimalDigits: 2 })
+}
+
+function safeFirstStamp(x) {
+  if (x == null || x.length === 0) return null
+  return pretty(x[0])
+}
+
+function processArguments(args) {
+  if (args == null) return { err: 'N/A', src: 'N/A' }
+  const err = args[0]
+  const srcInfo = args[1]
+  let src
+  if (srcInfo == null) {
+    src = 'N/A'
+  } else {
+    src = { len: srcInfo.len }
+    if (srcInfo.val) {
+      src.included = srcInfo.included
+      src.val = srcInfo.val
+    }
+  }
+  return { err, src }
+}
+
+function processFunction(fn) {
+  const name =
+      fn.name != null && fn.name.length > 0         ? fn.name
+    : fn.inferredName != null && fn.name.length > 0 ? fn.inferredName
+    : 'N/A'
+  const location = fn.file != null && fn.file.length > 0
+    ? `${fn.file}:${fn.line}:${fn.column}`
+    : 'N/A'
+  return { name, location }
+}
 
 //
 /**
@@ -46,8 +84,9 @@ function getOrCreate(map, key, create) {
 }
 
 class FsReadFileAnalyzer {
-  constructor(activities) {
+  constructor({ activities, includeActivities }) {
     this._activities = activities
+    this._includeActivities = includeActivities
   }
 
   analyze() {
@@ -60,7 +99,9 @@ class FsReadFileAnalyzer {
     const sorted = this._sortIdsByInitTime(potentialFsReads)
     const verified = this._filterDefiniteFsReadGroups(sorted)
     debug('%d verified fs read(s)', verified.size)
-    return verified
+
+    const descriptions = this._describe(verified)
+    return descriptions
   }
 
   _groupByFd() {
@@ -124,7 +165,110 @@ class FsReadFileAnalyzer {
     }
     return verified
   }
+
+  _describe(verified) {
+    const descriptions = new Map()
+    for (const [ k, v ] of verified) {
+      const desc = { execution: this._describeGroupExecution(v) }
+      this._addCalledBy(desc)
+      this._addCallback(desc)
+      descriptions.set(k, desc)
+    }
+    return descriptions
+  }
+
+  _addCalledBy(desc) {
+    const open = desc.execution.open
+    const oa = this._activities.get(open.id)
+    // top most line is fs.readFile, the frame of the call is right before
+    const openInitStack = oa.initStack != null && oa.initStack[1]
+    const calledBy = openInitStack != null
+      ? openInitStack
+      : 'N/A, ensure to pass a proper stack capturer:\n' +
+        'See: https://github.com/nodesource/ah-collector#activitycollector'
+    desc.calledBy = calledBy
+  }
+
+  _addCallback(desc) {
+    // close callback capture has most information, i.e. it includes the arguments
+    // passed when the callback was invoked
+    const close = desc.execution.close
+    const ca = this._activities.get(close.id)
+    const callback = ca.resource && ca.resource.context && ca.resource.context.callback
+    if (!callback) {
+      desc.callback = 'N/A, ensure to capture the resources properly.'
+      return
+    }
+    const { err, src } = processArguments(callback.arguments)
+    const { location, name } = processFunction(callback)
+    const srcViz = (src.val && src.val.utf8) || 'N/A'
+    desc.callback = {
+        name
+      , location
+      , arguments: { err, src }
+      , viz: `function ${name}(${err}, '${srcViz} ...')`
+    }
+  }
+
+  _describeGroupExecution(group) {
+    const keys = group.keys()
+
+    // open
+    let id = keys.next().value
+    const oa = this._activities.get(id)
+    const open = {
+        action      : 'open file'
+      , id          : id
+      , initialized : safeFirstStamp(oa.init)
+      , destroyed   : safeFirstStamp(oa.destroy)
+    }
+
+    // stat is triggered by open
+    id = keys.next().value
+    const sa = this._activities.get(id)
+    const stat = {
+        action      : 'stat file'
+      , id          : id
+      , triggered   : safeFirstStamp(oa.before)
+      , initialized : safeFirstStamp(sa.init)
+      , completed   : safeFirstStamp(oa.after)
+      , destroyed   : safeFirstStamp(sa.destroy)
+    }
+
+    // read is triggered by stat
+    id = keys.next().value
+    const ra = this._activities.get(id)
+    const read = {
+        action      : 'read file'
+      , id          : id
+      , triggered   : pretty(sa.before[0])
+      , initialized : safeFirstStamp(ra.init)
+      , completed   : safeFirstStamp(sa.after)
+      , destroyed   : safeFirstStamp(ra.destroy)
+    }
+
+    // close is triggered by read
+    id = keys.next().value
+    const ca = this._activities.get(id)
+    const close = {
+        action      : 'close file'
+      , id          : id
+      , triggered   : safeFirstStamp(ra.before)
+      , initialized : safeFirstStamp(ca.init)
+      , completed   : safeFirstStamp(ra.after)
+      , destroyed   : safeFirstStamp(ca.destroy)
+    }
+
+    if (this._includeActivities) {
+      open.activity  = oa
+      stat.activity  = sa
+      read.activity  = ra
+      close.activity = ca
+    }
+    return { open, stat, read, close }
+  }
 }
 
-const res = new FsReadFileAnalyzer(activities).analyze()
+const includeActivities = false
+const res = new FsReadFileAnalyzer({ activities, includeActivities }).analyze()
 inspect(res)
