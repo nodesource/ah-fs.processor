@@ -13,7 +13,7 @@ const statedFileRx = /at FSReqWrap.readFileAfterStat/i
 const closingFileRx = /at ReadFileContext.close/i
 
 function pretty(ns) {
-  return prettyMs(ns * 1E-6, { msDecimalDigits: 2 })
+  return { ms: prettyMs(ns * 1E-6, { msDecimalDigits: 2 }), ns }
 }
 
 function safeFirstStamp(x) {
@@ -241,7 +241,7 @@ class FsReadFileAnalyzer {
     const read = {
         action      : 'read file'
       , id          : id
-      , triggered   : pretty(sa.before[0])
+      , triggered   : safeFirstStamp(sa.before)
       , initialized : safeFirstStamp(ra.init)
       , completed   : safeFirstStamp(sa.after)
       , destroyed   : safeFirstStamp(ra.destroy)
