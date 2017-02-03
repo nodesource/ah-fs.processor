@@ -33,6 +33,6 @@
     "url": "https://github.com/nodesource/ah-fs.readfile/blob/master/LICENSE"
   },
   "engine": {
-    "node": ">=0.10"
+    "node": ">=4"
   }
 }
