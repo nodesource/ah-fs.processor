@@ -51,7 +51,7 @@ test('\nactivities with one file read, including activities .. checking included
   t.end()
 })
 
-test('\nactivities with one file read, not including activities .. checking time stamps', function(t) {
+test('\nactivities with one file read, not including activities .. checking time stamps, calledBy and callback', function(t) {
   const includeActivities = false
   const groups = new FsReadFileAnalyzer({ activities, includeActivities }).analyze()
   t.equal(groups.size, 1, 'finds one group')
@@ -102,6 +102,31 @@ test('\nactivities with one file read, not including activities .. checking time
   t.ok(typeof stat.activity === 'undefined', 'stat: does not include actual activity')
   t.ok(typeof read.activity === 'undefined', 'read: does not include actual activity')
   t.ok(typeof close.activity === 'undefined', 'close: does not include actual activity')
+
+  t.equal(group.calledBy
+    , 'at Test.<anonymous> (/Volumes/d/dev/js/async-hooks/ah-fs/test/read-one-file.js:49:6)'
+    , 'included correct calledBy information'
+  )
+
+  spok(t, group.callback,
+    { $topic: 'callback'
+    , name: 'onread'
+    , location: '/Volumes/d/dev/js/async-hooks/ah-fs/test/read-one-file.js:51:17' })
+
+  const args = group.callback.arguments
+  t.equal(args.err, null, 'arguments: includes null err')
+
+  spok(t, args.src,
+    { $topic: 'arguments.src'
+    , len: 5237
+    , included: 18 }
+  )
+
+  spok(t, args.src.val,
+      { $topic: 'args.src.val'
+      , utf8: 'const test = requi'
+      , hex: '636f6e73742074657374203d207265717569' }
+  )
   t.end()
 })
 

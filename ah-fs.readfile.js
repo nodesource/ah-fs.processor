@@ -245,12 +245,10 @@ class FsReadFileAnalyzer {
     }
     const { err, src } = processArguments(callback.arguments)
     const { location, name } = processFunction(callback)
-    const srcViz = (src.val && src.val.utf8) || 'N/A'
     desc.callback = {
         name
       , location
       , arguments: { err, src }
-      , viz: `function ${name}(${err}, '${srcViz} ...')`
     }
   }
 
