@@ -1,12 +1,6 @@
 const debug = require('debug')('fs:readfile')
 const prettyMs = require('pretty-ms')
 
-// eslint-disable-next-line no-unused-vars
-function inspect(obj, depth) {
-  console.error(require('util').inspect(obj, false, depth || 5, true))
-}
-const activities = new Map(require('./test/fixtures/one-file.json'))
-
 const readingFileRx = /at Object.fs.readFile/i
 const openedFileRx = /at FSReqWrap.readFileAfterOpen/i
 const statedFileRx = /at FSReqWrap.readFileAfterStat/i
@@ -49,7 +43,6 @@ function processFunction(fn) {
   return { name, location }
 }
 
-//
 /**
  * Tries to pull the `fd` property from the context of
  * the activity's resource.
@@ -106,7 +99,7 @@ class FsReadFileAnalyzer {
 
   _groupByFd() {
     const map = new Map()
-    for (const v of activities.values()) {
+    for (const v of this._activities.values()) {
       const fd = queryFd(v)
       getOrCreate(map, fd, createSet).add(v.id)
     }
@@ -269,6 +262,4 @@ class FsReadFileAnalyzer {
   }
 }
 
-const includeActivities = false
-const res = new FsReadFileAnalyzer({ activities, includeActivities }).analyze()
-inspect(res)
+module.exports = FsReadFileAnalyzer
