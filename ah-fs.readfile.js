@@ -77,11 +77,62 @@ function getOrCreate(map, key, create) {
 }
 
 class FsReadFileAnalyzer {
-  constructor({ activities, includeActivities }) {
+
+  /**
+   * Instantiates an fs.readFile data analyzer to analyze data collected via
+   * [nodesource/ah-fs](https://github.com/nodesource/ah-fs)
+   *
+   * @name FsReadFileAnalyzer
+   * @constructor
+   * @param {Object} $0
+   * @param {Map.<string, Object>} {$0.activities} a map of async activities hashed by id
+   * @param {boolean} [includeActivities=false] if `true` the actual activities are appended to the output
+   *
+   * @return {Map.<number, Object} map of fs.readFile activities hashed by the
+   * file descriptor they operated on, for more info @see fsReadFileAnalyzer.analyze()
+   */
+  constructor({ activities, includeActivities = false }) {
     this._activities = activities
     this._includeActivities = includeActivities
   }
 
+  /**
+   * Analyzes the supplied async activities and splits them into
+   * groups, each representing a file read `fs.readFile`
+   *
+   * If no file read was encountered the groups are empty.
+   *
+   * All **execution** data contains four timestamps:
+   *
+   * - **triggered** when was this activity triggered from another one, i.e.
+   *   `stat` is triggered by `open` (this timestamp is not available for `open`)
+   * - **initialized** when was the resource initialized, i.e. its `init` hook fired
+   * - **completed** when did the async activity complete and gave control back to the
+   *   activity that triggered it (this timestamp is not available for `open`)
+   * - **destroyed** when was the resource destroyed, i.e. its `destroy` hook fired
+   * Each group has the following properties:
+   *
+   * - **execution**: information about the execution of the various
+   *   file system operations involved in reading the file
+   *  - **open**: contains data about opening the file
+   *  - **stat**: contains data about getting file stats
+   *  - **read**: contains data about reading the file
+   *  - **close**: contains data about closing the file
+   *
+   * - **calledBy**: provides the line of code that called `fs.readFile` only
+   *   available if stacks were captured
+   * - **callback**: provides information about the callback that was registered
+   *   for the `fs.readFile` call and has the following properties
+   *   - **name**: the function name
+   *   - **location**: the file and line + column where the callback was defined
+   *   - **arguments**: the `err` and information about the `src` that was
+   *   read. This property is only available _if_ and it's structure depends on
+   *   _how_ arguments were captured.
+   *
+   * @name fsReadFileAnalyzer.analyze
+   * @return {Object} information about `fs.readFile` operations with the
+   * structure outlined above
+   */
   analyze() {
     const groups = this._groupByFd()
     debug('%d group(s)', groups.size)
@@ -262,4 +313,15 @@ class FsReadFileAnalyzer {
   }
 }
 
-module.exports = FsReadFileAnalyzer
+exports = module.exports = FsReadFileAnalyzer
+
+/**
+ * The number of steps involved to execute `fs.readFile`.
+ *
+ * This can be used by higher level processors to group
+ * activities looking for larger operations first and then
+ * operations involving less steps.
+ *
+ * @name FsReadFileAnalyze.operationSteps
+ */
+exports.operationSteps = 4
