@@ -65,6 +65,64 @@ This can be used by higher level processors to group
 activities looking for larger operations first and then
 operations involving less steps.
 
+### utils.idsTriggeredBy
+
+Finds all ids of activities that are triggered by the given id.
+This function works recursive, i.e. any activity triggered by
+a child of the root activity is included as well.
+
+For this to work, activities are assumed to be in the order that
+they were triggered. This can easily be achieved by simply sorting
+the activities by their init timestamp.
+
+**Parameters**
+
+-   `activities` **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), Activity>** collected via [ah-fs](https://github.com/nodesource/ah-fs)
+-   `id` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the id of the root activity we whose triggered _children_ we are trying to find
+-   `stop` **[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** a predicate that will finish the activity walk if it returns `true`.
+     Function signature: `(id, activity)`.
+
+Returns **[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** the provided root id and all ids of activities triggered by it or any of it's children,
+grandchildren, etc.
+
+### utils.prettyNs
+
+Prettifies the provided timestamp which is expected to be in nanoseconds.
+
+**Parameters**
+
+-   `ns` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** timestamp in nanoseconds
+
+Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** an object with an `ms` property which is the prettified version
+of the provided timestamp in milliseconds and `ns`, the originally passed timestamp.
+
+### utils.safeGetVal
+
+Safely extracts the `val` property from the object `x`.
+
+**Parameters**
+
+-   `x` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** the object which has the `val` property
+
+Returns **any** the `val` property if `x` was defined, otherwise `null`
+
+### utils.uniqueUserFunctions
+
+Identifies all user functions within the given functions, adds location and
+propertyPath strings and returns the result.
+
+The `propertyPath` is deduced from the `path` array.
+
+If a user function is found twice it will only be included once.
+
+**Parameters**
+
+-   `fns` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** all functions found attached to a particular async resource
+-   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** options
+    -   `$0.pathPrefix` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** prefix used for the property paths (optional, default `'root'`)
+
+Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** all user functions with the above mentioned details added
+
 ## License
 
 MIT
