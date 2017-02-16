@@ -1,6 +1,6 @@
 const test = require('tape')
 
-const FsReadFileAnalyzer = require('../')
+const { ReadFileProcessor } = require('../')
 
 // eslint-disable-next-line no-unused-vars
 function inspect(obj, depth) {
@@ -10,7 +10,7 @@ const activities = new Map(require('./fixtures/open.stat.close-only.json'))
 
 test('\nactivities with one file open, stat, close, but no read', function(t) {
   const includeActivities = true
-  const groups = new FsReadFileAnalyzer({ activities, includeActivities }).analyze()
-  t.equal(groups.size, 0, 'finds no fs.readFile group')
+  const groups = new ReadFileProcessor({ activities, includeActivities }).process()
+  t.equal(groups.size, 0, 'read file processor finds no fs.readFile group')
   t.end()
 })

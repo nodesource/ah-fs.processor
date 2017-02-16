@@ -3,7 +3,7 @@ const test = require('tape')
 const ocat = require('./utils/ocat')
 const spok = require('spok')
 
-const FsReadFileAnalyzer = require('../')
+const { ReadFileProcessor } = require('../')
 
 // eslint-disable-next-line no-unused-vars
 function inspect(obj, depth) {
@@ -13,7 +13,7 @@ const activities = new Map(require('./fixtures/one-file.json'))
 
 test('\nactivities with one file read, including activities .. checking included activities', function(t) {
   const includeActivities = true
-  const groups = new FsReadFileAnalyzer({ activities, includeActivities }).analyze()
+  const groups = new ReadFileProcessor({ activities, includeActivities }).process()
   t.equal(groups.size, 1, 'finds one group')
 
   const fd = groups.keys().next().value
@@ -53,7 +53,7 @@ test('\nactivities with one file read, including activities .. checking included
 
 test('\nactivities with one file read, not including activities .. checking time stamps, calledBy and callback', function(t) {
   const includeActivities = false
-  const groups = new FsReadFileAnalyzer({ activities, includeActivities }).analyze()
+  const groups = new ReadFileProcessor({ activities, includeActivities }).process()
   t.equal(groups.size, 1, 'finds one group')
 
   const fd = groups.keys().next().value
