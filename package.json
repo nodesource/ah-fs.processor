@@ -1,16 +1,16 @@
 {
-  "name": "ah-fs.readfile",
+  "name": "ah-fs.processor",
   "version": "0.0.0",
   "description": "Analyzes ah-fs data specifically for fs.readFile cases.",
-  "main": "ah-fs.readfile.js",
+  "main": "ah-fs.processor.js",
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/nodesource/ah-fs.readfile.git"
+    "url": "git://github.com/nodesource/ah-fs.processor.git"
   },
-  "homepage": "https://github.com/nodesource/ah-fs.readfile",
+  "homepage": "https://github.com/nodesource/ah-fs.processor",
   "dependencies": {
     "debug": "~2.6.0",
     "pretty-ms": "~2.1.0"
@@ -30,7 +30,7 @@
   },
   "license": {
     "type": "MIT",
-    "url": "https://github.com/nodesource/ah-fs.readfile/blob/master/LICENSE"
+    "url": "https://github.com/nodesource/ah-fs.processor/blob/master/LICENSE"
   },
   "engine": {
     "node": ">=4"
