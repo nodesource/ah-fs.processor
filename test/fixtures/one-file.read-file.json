@@ -1,0 +1,309 @@
+[
+  [
+    10,
+    {
+      "id": 10,
+      "type": "FSREQWRAP",
+      "triggerId": 1,
+      "init": [
+        44119000
+      ],
+      "initStack": [
+        "at Object.fs.readFile (fs.js:295:11)",
+        "at Test.<anonymous> (/Volumes/d/dev/js/async-hooks/ah-fs/test/read-one-file.js:36:6)",
+        "at Test.bound [as _cb] (/Volumes/d/dev/js/async-hooks/ah-fs/node_modules/tape/lib/test.js:66:32)",
+        "at Test.run (/Volumes/d/dev/js/async-hooks/ah-fs/node_modules/tape/lib/test.js:85:10)",
+        "at Test.bound [as run] (/Volumes/d/dev/js/async-hooks/ah-fs/node_modules/tape/lib/test.js:66:32)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 17,
+          "isUserFd": false,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": null,
+          "pos": 0,
+          "err": null,
+          "_asyncId": 10,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-fs/test/read-one-file.js",
+              "line": 39,
+              "column": 17,
+              "inferredName": "",
+              "name": "onread"
+            },
+            "id": 10,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        51218000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        51441000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        51784000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    11,
+    {
+      "id": 11,
+      "type": "FSREQWRAP",
+      "triggerId": 10,
+      "init": [
+        51356000
+      ],
+      "initStack": [
+        "at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:380:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 17,
+          "isUserFd": false,
+          "size": 6108,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 6108,
+            "included": 18,
+            "val": {
+              "utf8": "const test = requi",
+              "hex": "636f6e73742074657374203d207265717569"
+            }
+          },
+          "pos": 0,
+          "err": null,
+          "_asyncId": 12,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-fs/test/read-one-file.js",
+              "line": 39,
+              "column": 17,
+              "inferredName": "",
+              "name": "onread"
+            },
+            "id": 11,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        51837000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        52226000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        65791000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    12,
+    {
+      "id": 12,
+      "type": "FSREQWRAP",
+      "triggerId": 11,
+      "init": [
+        52166000
+      ],
+      "initStack": [
+        "at ReadFileContext.read (fs.js:340:11)",
+        "at FSReqWrap.readFileAfterStat [as oncomplete] (fs.js:404:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 17,
+          "isUserFd": false,
+          "size": 6108,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 6108,
+            "included": 18,
+            "val": {
+              "utf8": "const test = requi",
+              "hex": "636f6e73742074657374203d207265717569"
+            }
+          },
+          "pos": 6108,
+          "_asyncId": 13,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-fs/test/read-one-file.js",
+              "line": 39,
+              "column": 17,
+              "inferredName": "",
+              "name": "onread"
+            },
+            "id": 12,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        65878000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        66169000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        73659000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    13,
+    {
+      "id": 13,
+      "type": "FSREQWRAP",
+      "triggerId": 12,
+      "init": [
+        66111000
+      ],
+      "initStack": [
+        "at ReadFileContext.close (fs.js:363:11)",
+        "at FSReqWrap.readFileAfterRead [as oncomplete] (fs.js:420:15)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 17,
+          "isUserFd": false,
+          "size": 6108,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 6108,
+            "included": 18,
+            "val": {
+              "utf8": "const test = requi",
+              "hex": "636f6e73742074657374203d207265717569"
+            }
+          },
+          "pos": 6108,
+          "_asyncId": 13,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-fs/test/read-one-file.js",
+              "line": 39,
+              "column": 17,
+              "inferredName": "",
+              "name": "onread"
+            },
+            "id": 13,
+            "arguments": {
+              "0": null,
+              "1": {
+                "type": "Buffer",
+                "len": 6108,
+                "included": 18,
+                "val": {
+                  "utf8": "const test = requi",
+                  "hex": "636f6e73742074657374203d207265717569"
+                }
+              },
+              "proto": "Object"
+            }
+          }
+        ]
+      },
+      "before": [
+        73817000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        84037000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        85955000
+      ],
+      "destroyStack": []
+    }
+  ]
+]

@@ -12,10 +12,11 @@ function inspect(obj, depth) {
 }
 const activities = new Map(require('./fixtures/one-file.read-stream.json'))
 
-test('\nactivities for one active read stream, not including activities', function(t) {
+test('\nactivities for one active read stream, not including activities, separating user functions', function(t) {
   const includeActivities = false
+  const separateFunctions = true
   const { groups, operations } =
-    new ReadStreamProcessor({ activities, includeActivities }).process()
+    new ReadStreamProcessor({ activities, includeActivities, separateFunctions }).process()
 
   t.equal(groups.size, 1, 'finds one read stream group')
   const groupMembers = [ 10, 12, 13, 14, 16 ]
@@ -86,7 +87,63 @@ test('\nactivities for one active read stream, not including activities', functi
     , pipesCount: 0
     , defaultEncoding: 'utf8'
     , encoding: null
+    , userFunctions: spok.notDefined
   })
+  t.equal(typeof op.stream.activity, 'undefined', 'does not include activity for stream')
+
+  t.equal(op.userFunctions.length, 2
+    , 'pulls out two unique user functions attached to the stream and separately attaches them'
+  )
+  spok(t, op.userFunctions[0],
+    { $topic: 'first user function'
+    , file: '/Volumes/d/dev/js/async-hooks/ah-fs/test/readstream-one-file.js'
+    , line: 99
+    , column: 16
+    , inferredName: ''
+    , name: 'onend'
+    , location: 'onend (/Volumes/d/dev/js/async-hooks/ah-fs/test/readstream-one-file.js:99:16)'
+    , propertyPath: spok.notDefined
+    , propertyPaths:  [ 'stream.resource.args[0]._events.end[1]' ]
+  })
+  spok(t, op.userFunctions[1],
+    { $topic: 'second user function'
+    , file: '/Volumes/d/dev/js/async-hooks/ah-fs/test/readstream-one-file.js'
+    , line: 98
+    , column: 17
+    , inferredName: ''
+    , name: 'ondata'
+    , location: 'ondata (/Volumes/d/dev/js/async-hooks/ah-fs/test/readstream-one-file.js:98:17)'
+    , propertyPath: spok.notDefined
+    , propertyPaths: [ 'stream.resource.args[0]._events.data' ]
+  })
+
+  t.end()
+})
+
+test('\nactivities for one active read stream, including activities', function(t) {
+  const includeActivities = true
+  const { operations } =
+    new ReadStreamProcessor({ activities, includeActivities }).process()
+  const op = operations.get(OPENID)
+  const read1 = op.reads[0]
+  const read2 = op.reads[1]
+
+  t.equal(typeof op.open.activity, 'object', 'does include activity for open')
+  t.equal(typeof op.close.activity, 'object', 'does include activity for close')
+  t.equal(typeof read1.activity, 'object', 'does include activity for read1')
+  t.equal(typeof read2.activity, 'object', 'does include activity for read2')
+  t.equal(typeof op.stream.activity, 'object', 'does include activity for stream')
+
+  t.end()
+})
+
+test('\nactivities for one active read stream, not including activities, not separating user functions', function(t) {
+  const includeActivities = false
+  const separateFunctions = false
+  const { operations } =
+    new ReadStreamProcessor({ activities, includeActivities, separateFunctions }).process()
+
+  const op = operations.get(OPENID)
   t.equal(op.stream.userFunctions.length, 2
     , 'pulls out two unique user functions attached to the stream'
   )
@@ -110,24 +167,5 @@ test('\nactivities for one active read stream, not including activities', functi
     , location: 'ondata (/Volumes/d/dev/js/async-hooks/ah-fs/test/readstream-one-file.js:98:17)'
     , propertyPath: 'stream.resource.args[0]._events.data'
   })
-  t.equal(typeof op.stream.activity, 'undefined', 'does not include activity for stream')
-
-  t.end()
-})
-
-test('\nactivities for one active read stream, including activities', function(t) {
-  const includeActivities = true
-  const { operations } =
-    new ReadStreamProcessor({ activities, includeActivities }).process()
-  const op = operations.get(OPENID)
-  const read1 = op.reads[0]
-  const read2 = op.reads[1]
-
-  t.equal(typeof op.open.activity, 'object', 'does include activity for open')
-  t.equal(typeof op.close.activity, 'object', 'does include activity for close')
-  t.equal(typeof read1.activity, 'object', 'does include activity for read1')
-  t.equal(typeof read2.activity, 'object', 'does include activity for read2')
-  t.equal(typeof op.stream.activity, 'object', 'does include activity for stream')
-
   t.end()
 })
