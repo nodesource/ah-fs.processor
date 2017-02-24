@@ -13,6 +13,7 @@
   "homepage": "https://github.com/nodesource/ah-fs.processor",
   "dependencies": {
     "debug": "~2.6.0",
+    "grama": "~1.3.0",
     "pretty-ms": "~2.1.0"
   },
   "devDependencies": {

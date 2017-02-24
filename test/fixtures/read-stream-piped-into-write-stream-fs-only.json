@@ -1,0 +1,1435 @@
+[
+  [
+    10,
+    {
+      "id": 10,
+      "type": "FSREQWRAP",
+      "triggerId": 3,
+      "init": [
+        1123000
+      ],
+      "initStack": [
+        "at Object.fs.open (fs.js:581:11)",
+        "at WriteStream.open (fs.js:1893:6)",
+        "at new WriteStream (fs.js:1879:10)",
+        "at Object.fs.createWriteStream (fs.js:1841:10)",
+        "at Test.<anonymous> (/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js:29:26)"
+      ],
+      "resource": null,
+      "before": [
+        9842000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        9981000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        10747000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    11,
+    {
+      "id": 11,
+      "type": "FSREQWRAP",
+      "triggerId": 3,
+      "init": [
+        2353000
+      ],
+      "initStack": [
+        "at Object.fs.open (fs.js:581:11)",
+        "at ReadStream.open (fs.js:1730:6)",
+        "at new ReadStream (fs.js:1717:10)",
+        "at Object.fs.createReadStream (fs.js:1667:10)",
+        "at Test.<anonymous> (/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js:30:6)"
+      ],
+      "resource": null,
+      "before": [
+        10080000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        10681000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        10782000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    12,
+    {
+      "id": 12,
+      "type": "TickObject",
+      "triggerId": 3,
+      "init": [
+        3230000
+      ],
+      "resource": {
+        "args": [
+          {
+            "_readableState": {
+              "type": "object",
+              "proto": "ReadableState",
+              "val": "<deleted>"
+            },
+            "readable": true,
+            "domain": null,
+            "_events": {
+              "type": "object",
+              "proto": null,
+              "val": "<deleted>"
+            },
+            "_eventsCount": 3,
+            "path": {
+              "type": "string",
+              "len": 79,
+              "included": 79,
+              "val": "/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js"
+            },
+            "fd": null,
+            "flags": {
+              "type": "string",
+              "len": 1,
+              "included": 1,
+              "val": "r"
+            },
+            "mode": 438,
+            "autoClose": true,
+            "bytesRead": 0,
+            "_asyncId": -1,
+            "proto": "ReadStream"
+          },
+          {
+            "objectMode": false,
+            "highWaterMark": 65536,
+            "buffer": {
+              "type": "object",
+              "proto": "BufferList",
+              "val": "<deleted>"
+            },
+            "length": 0,
+            "pipes": {
+              "type": "object",
+              "proto": "WriteStream",
+              "val": "<deleted>"
+            },
+            "pipesCount": 1,
+            "flowing": true,
+            "ended": false,
+            "endEmitted": false,
+            "reading": true,
+            "sync": false,
+            "needReadable": true,
+            "emittedReadable": false,
+            "readableListening": false,
+            "resumeScheduled": false,
+            "defaultEncoding": {
+              "type": "string",
+              "len": 4,
+              "included": 4,
+              "val": "utf8"
+            },
+            "ranOut": false,
+            "awaitDrain": 0,
+            "readingMore": false,
+            "decoder": null,
+            "encoding": null,
+            "proto": "ReadableState"
+          },
+          {
+            "_writableState": {
+              "type": "object",
+              "proto": "WritableState",
+              "val": "<deleted>"
+            },
+            "writable": true,
+            "domain": null,
+            "_events": {
+              "type": "object",
+              "proto": null,
+              "val": "<deleted>"
+            },
+            "_eventsCount": 5,
+            "path": {
+              "type": "string",
+              "len": 9,
+              "included": 9,
+              "val": "/dev/null"
+            },
+            "fd": null,
+            "flags": {
+              "type": "string",
+              "len": 1,
+              "included": 1,
+              "val": "w"
+            },
+            "mode": 438,
+            "autoClose": true,
+            "bytesWritten": 0,
+            "proto": "WriteStream"
+          }
+        ],
+        "functions": [
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_writableState",
+              "onwrite"
+            ],
+            "key": "onwrite",
+            "level": 5,
+            "info": {
+              "file": "_stream_writable.js",
+              "line": 348,
+              "column": 16,
+              "inferredName": "",
+              "name": "bound onwrite"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_writableState",
+              "corkedRequestsFree",
+              "finish"
+            ],
+            "key": "finish",
+            "level": 6,
+            "info": {
+              "file": "_stream_writable.js",
+              "line": 530,
+              "column": 23,
+              "inferredName": "",
+              "name": "bound onCorkedFinish"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "finish",
+              "0"
+            ],
+            "key": "0",
+            "level": 6,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "finish",
+              "1"
+            ],
+            "key": "1",
+            "level": 6,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js",
+              "line": 32,
+              "column": 19,
+              "inferredName": "",
+              "name": "onfinish"
+            },
+            "id": 12,
+            "arguments": null
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "finish",
+              "2"
+            ],
+            "key": "2",
+            "level": 6,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "unpipe"
+            ],
+            "key": "unpipe",
+            "level": 5,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 502,
+              "column": 19,
+              "inferredName": "",
+              "name": "onunpipe"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "drain"
+            ],
+            "key": "drain",
+            "level": 5,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 616,
+              "column": 17,
+              "inferredName": "",
+              "name": ""
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "error"
+            ],
+            "key": "error",
+            "level": 5,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 574,
+              "column": 18,
+              "inferredName": "",
+              "name": "onerror"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "close"
+            ],
+            "key": "close",
+            "level": 5,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_events",
+              "end",
+              "0"
+            ],
+            "key": "0",
+            "level": 4,
+            "info": {
+              "file": "fs.js",
+              "line": 1719,
+              "column": 25,
+              "inferredName": "",
+              "name": ""
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_events",
+              "end",
+              "1"
+            ],
+            "key": "1",
+            "level": 4,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_events",
+              "data"
+            ],
+            "key": "data",
+            "level": 3,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 552,
+              "column": 17,
+              "inferredName": "",
+              "name": "ondata"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_events",
+              "open"
+            ],
+            "key": "open",
+            "level": 3,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_writableState",
+              "onwrite"
+            ],
+            "key": "onwrite",
+            "level": 4,
+            "info": {
+              "file": "_stream_writable.js",
+              "line": 348,
+              "column": 16,
+              "inferredName": "",
+              "name": "bound onwrite"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_writableState",
+              "corkedRequestsFree",
+              "finish"
+            ],
+            "key": "finish",
+            "level": 5,
+            "info": {
+              "file": "_stream_writable.js",
+              "line": 530,
+              "column": 23,
+              "inferredName": "",
+              "name": "bound onCorkedFinish"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "finish",
+              "0"
+            ],
+            "key": "0",
+            "level": 5,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "finish",
+              "1"
+            ],
+            "key": "1",
+            "level": 5,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js",
+              "line": 32,
+              "column": 19,
+              "inferredName": "",
+              "name": "onfinish"
+            },
+            "id": 12,
+            "arguments": null
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "finish",
+              "2"
+            ],
+            "key": "2",
+            "level": 5,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "unpipe"
+            ],
+            "key": "unpipe",
+            "level": 4,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 502,
+              "column": 19,
+              "inferredName": "",
+              "name": "onunpipe"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "drain"
+            ],
+            "key": "drain",
+            "level": 4,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 616,
+              "column": 17,
+              "inferredName": "",
+              "name": ""
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "error"
+            ],
+            "key": "error",
+            "level": 4,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 574,
+              "column": 18,
+              "inferredName": "",
+              "name": "onerror"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "close"
+            ],
+            "key": "close",
+            "level": 4,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 12,
+            "arguments": "<Inaccessible>"
+          }
+        ]
+      },
+      "before": [
+        4385000
+      ],
+      "after": [
+        4985000
+      ],
+      "destroy": [
+        9797000
+      ]
+    }
+  ],
+  [
+    13,
+    {
+      "id": 13,
+      "type": "FSREQWRAP",
+      "triggerId": 11,
+      "init": [
+        10423000
+      ],
+      "initStack": [
+        "at Object.fs.read (fs.js:608:11)",
+        "at ReadStream._read (fs.js:1778:6)",
+        "at ReadStream.<anonymous> (fs.js:1749:12)",
+        "at Object.onceWrapper (events.js:291:19)",
+        "at emitOne (events.js:96:13)"
+      ],
+      "resource": null,
+      "before": [
+        10822000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        11887000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        13565000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    14,
+    {
+      "id": 14,
+      "type": "FSREQWRAP",
+      "triggerId": 13,
+      "init": [
+        11540000
+      ],
+      "initStack": [
+        "at Object.fs.write (fs.js:643:20)",
+        "at WriteStream._write (fs.js:1919:6)",
+        "at doWrite (_stream_writable.js:326:12)",
+        "at writeOrBuffer (_stream_writable.js:312:5)",
+        "at WriteStream.Writable.write (_stream_writable.js:236:11)"
+      ],
+      "resource": null,
+      "before": [
+        13616000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        13755000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        17818000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    15,
+    {
+      "id": 15,
+      "type": "FSREQWRAP",
+      "triggerId": 13,
+      "init": [
+        11683000
+      ],
+      "initStack": [
+        "at Object.fs.read (fs.js:608:11)",
+        "at ReadStream._read (fs.js:1778:6)",
+        "at ReadStream.Readable.read (_stream_readable.js:348:10)",
+        "at readableAddChunk (_stream_readable.js:177:18)",
+        "at ReadStream.Readable.push (_stream_readable.js:134:10)"
+      ],
+      "resource": null,
+      "before": [
+        13815000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        14120000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        17898000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    16,
+    {
+      "id": 16,
+      "type": "TickObject",
+      "triggerId": 13,
+      "init": [
+        11835000
+      ],
+      "resource": {
+        "args": [
+          {
+            "_readableState": {
+              "type": "object",
+              "proto": "ReadableState",
+              "val": "<deleted>"
+            },
+            "readable": true,
+            "domain": null,
+            "_events": {
+              "type": "object",
+              "proto": null,
+              "val": "<deleted>"
+            },
+            "_eventsCount": 2,
+            "path": {
+              "type": "string",
+              "len": 79,
+              "included": 79,
+              "val": "/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js"
+            },
+            "fd": 20,
+            "flags": {
+              "type": "string",
+              "len": 1,
+              "included": 1,
+              "val": "r"
+            },
+            "mode": 438,
+            "autoClose": true,
+            "bytesRead": 5856,
+            "_asyncId": -1,
+            "proto": "ReadStream"
+          },
+          {
+            "objectMode": false,
+            "highWaterMark": 65536,
+            "buffer": {
+              "type": "object",
+              "proto": "BufferList",
+              "val": "<deleted>"
+            },
+            "length": 0,
+            "pipes": {
+              "type": "object",
+              "proto": "WriteStream",
+              "val": "<deleted>"
+            },
+            "pipesCount": 1,
+            "flowing": true,
+            "ended": false,
+            "endEmitted": false,
+            "reading": true,
+            "sync": false,
+            "needReadable": true,
+            "emittedReadable": false,
+            "readableListening": false,
+            "resumeScheduled": false,
+            "defaultEncoding": {
+              "type": "string",
+              "len": 4,
+              "included": 4,
+              "val": "utf8"
+            },
+            "ranOut": false,
+            "awaitDrain": 0,
+            "readingMore": false,
+            "decoder": null,
+            "encoding": null,
+            "proto": "ReadableState"
+          },
+          {
+            "_writableState": {
+              "type": "object",
+              "proto": "WritableState",
+              "val": "<deleted>"
+            },
+            "writable": true,
+            "domain": null,
+            "_events": {
+              "type": "object",
+              "proto": null,
+              "val": "<deleted>"
+            },
+            "_eventsCount": 5,
+            "path": {
+              "type": "string",
+              "len": 9,
+              "included": 9,
+              "val": "/dev/null"
+            },
+            "fd": 19,
+            "flags": {
+              "type": "string",
+              "len": 1,
+              "included": 1,
+              "val": "w"
+            },
+            "mode": 438,
+            "autoClose": true,
+            "bytesWritten": 0,
+            "proto": "WriteStream"
+          }
+        ],
+        "functions": [
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_writableState",
+              "onwrite"
+            ],
+            "key": "onwrite",
+            "level": 5,
+            "info": {
+              "file": "_stream_writable.js",
+              "line": 348,
+              "column": 16,
+              "inferredName": "",
+              "name": "bound onwrite"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_writableState",
+              "writecb"
+            ],
+            "key": "writecb",
+            "level": 5,
+            "info": {
+              "file": "_stream_writable.js",
+              "line": 17,
+              "column": 12,
+              "inferredName": "",
+              "name": "nop"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_writableState",
+              "corkedRequestsFree",
+              "finish"
+            ],
+            "key": "finish",
+            "level": 6,
+            "info": {
+              "file": "_stream_writable.js",
+              "line": 530,
+              "column": 23,
+              "inferredName": "",
+              "name": "bound onCorkedFinish"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "finish",
+              "0"
+            ],
+            "key": "0",
+            "level": 6,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "finish",
+              "1"
+            ],
+            "key": "1",
+            "level": 6,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js",
+              "line": 32,
+              "column": 19,
+              "inferredName": "",
+              "name": "onfinish"
+            },
+            "id": 16,
+            "arguments": null
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "finish",
+              "2"
+            ],
+            "key": "2",
+            "level": 6,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "unpipe"
+            ],
+            "key": "unpipe",
+            "level": 5,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 502,
+              "column": 19,
+              "inferredName": "",
+              "name": "onunpipe"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "drain"
+            ],
+            "key": "drain",
+            "level": 5,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 616,
+              "column": 17,
+              "inferredName": "",
+              "name": ""
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "error"
+            ],
+            "key": "error",
+            "level": 5,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 574,
+              "column": 18,
+              "inferredName": "",
+              "name": "onerror"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_readableState",
+              "pipes",
+              "_events",
+              "close"
+            ],
+            "key": "close",
+            "level": 5,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_events",
+              "end",
+              "0"
+            ],
+            "key": "0",
+            "level": 4,
+            "info": {
+              "file": "fs.js",
+              "line": 1719,
+              "column": 25,
+              "inferredName": "",
+              "name": ""
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_events",
+              "end",
+              "1"
+            ],
+            "key": "1",
+            "level": 4,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "0",
+              "_events",
+              "data"
+            ],
+            "key": "data",
+            "level": 3,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 552,
+              "column": 17,
+              "inferredName": "",
+              "name": "ondata"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_writableState",
+              "onwrite"
+            ],
+            "key": "onwrite",
+            "level": 4,
+            "info": {
+              "file": "_stream_writable.js",
+              "line": 348,
+              "column": 16,
+              "inferredName": "",
+              "name": "bound onwrite"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_writableState",
+              "writecb"
+            ],
+            "key": "writecb",
+            "level": 4,
+            "info": {
+              "file": "_stream_writable.js",
+              "line": 17,
+              "column": 12,
+              "inferredName": "",
+              "name": "nop"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_writableState",
+              "corkedRequestsFree",
+              "finish"
+            ],
+            "key": "finish",
+            "level": 5,
+            "info": {
+              "file": "_stream_writable.js",
+              "line": 530,
+              "column": 23,
+              "inferredName": "",
+              "name": "bound onCorkedFinish"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "finish",
+              "0"
+            ],
+            "key": "0",
+            "level": 5,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "finish",
+              "1"
+            ],
+            "key": "1",
+            "level": 5,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js",
+              "line": 32,
+              "column": 19,
+              "inferredName": "",
+              "name": "onfinish"
+            },
+            "id": 16,
+            "arguments": null
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "finish",
+              "2"
+            ],
+            "key": "2",
+            "level": 5,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "unpipe"
+            ],
+            "key": "unpipe",
+            "level": 4,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 502,
+              "column": 19,
+              "inferredName": "",
+              "name": "onunpipe"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "drain"
+            ],
+            "key": "drain",
+            "level": 4,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 616,
+              "column": 17,
+              "inferredName": "",
+              "name": ""
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "error"
+            ],
+            "key": "error",
+            "level": 4,
+            "info": {
+              "file": "_stream_readable.js",
+              "line": 574,
+              "column": 18,
+              "inferredName": "",
+              "name": "onerror"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          },
+          {
+            "path": [
+              "args",
+              "1",
+              "pipes",
+              "_events",
+              "close"
+            ],
+            "key": "close",
+            "level": 4,
+            "info": {
+              "file": "events.js",
+              "line": 287,
+              "column": 20,
+              "inferredName": "",
+              "name": "bound onceWrapper"
+            },
+            "id": 16,
+            "arguments": "<Inaccessible>"
+          }
+        ]
+      },
+      "before": [
+        11947000
+      ],
+      "after": [
+        12011000
+      ],
+      "destroy": [
+        13553000
+      ]
+    }
+  ],
+  [
+    18,
+    {
+      "id": 18,
+      "type": "FSREQWRAP",
+      "triggerId": 15,
+      "init": [
+        14604000
+      ],
+      "initStack": [
+        "at Object.fs.close (fs.js:555:11)",
+        "at close (fs.js:1829:8)",
+        "at ReadStream.close (fs.js:1825:3)",
+        "at ReadStream.destroy (fs.js:1808:8)",
+        "at ReadStream.<anonymous> (fs.js:1721:12)"
+      ],
+      "resource": null,
+      "before": [
+        17954000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        18031000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        18179000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    19,
+    {
+      "id": 19,
+      "type": "FSREQWRAP",
+      "triggerId": 15,
+      "init": [
+        15177000
+      ],
+      "initStack": [
+        "at Object.fs.close (fs.js:555:11)",
+        "at close (fs.js:1829:8)",
+        "at WriteStream.ReadStream.close (fs.js:1825:3)",
+        "at WriteStream.<anonymous> (fs.js:1884:12)",
+        "at Object.onceWrapper (events.js:291:19)"
+      ],
+      "resource": null,
+      "before": [
+        18070000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        18105000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        18205000
+      ],
+      "destroyStack": []
+    }
+  ]
+]
