@@ -35,6 +35,8 @@ Processes ah-fs data obtained from async resources related to file system opeara
   - [Sample Return Value](#sample-return-value-1)
   - [ReadStreamProcessor.operationSteps](#readstreamprocessoroperationsteps)
   - [utils.idsTriggeredBy](#utilsidstriggeredby)
+  - [utils.oldestId](#utilsoldestid)
+  - [immediatelyBeforeId](#immediatelybeforeid)
   - [utils.prettyNs](#utilsprettyns)
   - [utils.safeGetVal](#utilssafegetval)
   - [utils.uniqueUserFunctions](#utilsuniqueuserfunctions)
@@ -47,6 +49,22 @@ Processes ah-fs data obtained from async resources related to file system opeara
   - [readStreamOperation.\_processClose](#readstreamoperation%5C_processclose)
   - [readStreamOperation.summary](#readstreamoperationsummary)
   - [Properties Specific to `fs.createReadStream`](#properties-specific-to-fscreatereadstream)
+  - [WriteStreamProcessor](#writestreamprocessor)
+  - [writeStreamProcessor.process](#writestreamprocessorprocess)
+  - [Groups](#groups-2)
+  - [Operations](#operations-2)
+    - [`fs.createWriteStream` specific Operation Properties](#fscreatewritestream-specific-operation-properties)
+    - [General Operation Properties](#general-operation-properties-2)
+  - [Sample Return Value](#sample-return-value-2)
+  - [writeStreamProcessor.\_separteIntoGroups](#writestreamprocessor%5C_separteintogroups)
+  - [Connecting WriteSteam Write to WriteStream Close](#connecting-writesteam-write-to-writestream-close)
+  - [Connecting WriteStream Open to WriteStream Write](#connecting-writestream-open-to-writestream-write)
+  - [WriteStreamProcessor.operationSteps](#writestreamprocessoroperationsteps)
+  - [WriteStreamOperation](#writestreamoperation)
+  - [writeStreamOperation.\_processOpen](#writestreamoperation%5C_processopen)
+  - [writeStreamOperation.\_processTick](#writestreamoperation%5C_processtick)
+  - [writeStreamOperation.\_processwrite](#writestreamoperation%5C_processwrite)
+  - [writeStreamOperation.\_processClose](#writestreamoperation%5C_processclose)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -417,6 +435,35 @@ the activities by their init timestamp.
 Returns **[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** the provided root id and all ids of activities triggered by it or any of it's children,
 grandchildren, etc.
 
+### utils.oldestId
+
+Finds the oldest activity of the ones supplied via the ids.
+We consider an activity older than another one if it's init timestamp
+is further in the past.
+
+Any ids we can't find as in the activities are ignored.
+
+**Parameters**
+
+-   `activities` **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** the collected async activities
+-   `ids` **[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** the ids to consider when finding the oldest
+
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the id of the oldest activity or `null` if no activity for any id was found
+
+### immediatelyBeforeId
+
+Finds the activity of the ones supplied via the ids that initialized immediately
+before the one with the given id initialized.
+
+**Parameters**
+
+-   `activities` **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** the collected async activities
+-   `ids` **[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** the ids to consider when finding most immediate
+-   `the` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** id of the activity for which we will find the activity that initialized immediately before
+
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the id that initialized immediately before the activity with `id` or `null` if no activity for any
+id was found
+
 ### utils.prettyNs
 
 Prettifies the provided timestamp which is expected to be in nanoseconds.
@@ -592,6 +639,250 @@ Therefore learn more [here](#general-operation-properties).
         from both version. Note that this setting only activates if `separateFunctions` is `true` as well. (optional, default `true`)
 
 Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** all important information about the current operation
+
+### WriteStreamProcessor
+
+Instantiates an fs.createWriteStream data processor to process data collected via
+[nodesource/ah-fs](https://github.com/nodesource/ah-fs)
+
+**Parameters**
+
+-   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `$0.includeActivities` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** if `true` the actual activities are appended to the output (optional, default `false`)
+    -   `$0.separateFunctions` **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** when `true` the user functions are separated out
+        from the specific resources and attached as a `userFunctions` array directly to the returned
+        operations (optional, default `true`)
+
+### writeStreamProcessor.process
+
+Processes the supplied async activities and splits them into
+groups, and operations each representing a file write stream `fs.createWriteStream`.
+
+### Groups
+
+The returned value has a `groups` property which just lists the ids
+of async resources that were grouped together to form an operation
+indexed by the `fd` on which the writeFile operated.
+Thus the `groups` is a map of sets.
+If no file write stream was encountered the groups are empty.
+
+### Operations
+
+Additionally an `operations` property is included as well. Each operation
+represents one full `fs.createWriteStream` execution. There will be one operation per
+group and they are indexed by the corresponding `fd` as well.
+
+An `operation` has the following properties:
+
+#### `fs.createWriteStream` specific Operation Properties
+
+ Data about the async resources that were part of the operation, by default
+ only `id` and `triggerId` are included:
+
+-   **open**: contains data about opening the file
+-   **stream**: contains data about how the stream was configured, including writeable state and
+    the path to the file being write, pipes count, encoding, etc.
+-   **writes**: an Array of writes, each containing data about writing a chunk from the file including
+    the time spent to complete writeing the particular chunk
+-   **close**: contains data about closing the file
+
+#### General Operation Properties
+
+-   [see ReadFileProcessor.process](https://nodesource.github.io/ah-fs.processor/#general-operation-properties)
+
+### Sample Return Value
+
+The sample return value was created with default options.
+
+```js
+{ groups: Map { 10 => Set { 14, 10, 16, 19 } },
+  operations:
+  Map {
+    10 => { lifeCycle:
+      { created: { ms: '1.12ms', ns: 1123000 },
+        destroyed: { ms: '18.20ms', ns: 18205000 },
+        timeAlive: { ms: '17.08ms', ns: 17082000 } },
+    createdAt: 'at Test.<anonymous> (/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js:29:26)',
+    open: { id: 10, triggerId: 3 },
+    stream:
+      { id: 16,
+        triggerId: 13,
+        path: '/dev/null',
+        flags: 'w',
+        fd: 19,
+        mode: 438 },
+    writes:
+      [ { id: 14,
+          triggerId: 13,
+          timeSpent: { ms: '0.14ms', ns: 139000 } } ],
+    close: { id: 19, triggerId: 15 },
+    userFunctions:
+      [ { file: '/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js',
+          line: 32,
+          column: 19,
+          inferredName: '',
+          name: 'onfinish',
+          location: 'onfinish (/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js:32:19)',
+          args: null,
+          propertyPaths: [ 'stream.resource.args[1].pipes._events.finish[1]' ] } ] } } }
+```
+
+Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** information about `fs.createWriteStream` operations with the
+structure outlined above
+
+### writeStreamProcessor.\_separteIntoGroups
+
+Here we try our best to piece together the parts of a WriteStream,
+Open | Write+ | WriteStreamTick | Close.
+
+Since they aren't linked by a common file descriptor or similar we rely
+on async resource graph structure and the timestamps to take a best guess.
+
+We just don't have the data available to piece this together with 100% certainty.
+
+Below is a sample of collected async resources with all but types and ids removed.
+
+     { type: 'FSREQWRAP', id: 10, tid: 3 }   open, write stream triggered by root
+     { type: 'FSREQWRAP', id: 11, tid: 3 }   open, read stream triggered by root
+     { type: 'TickObject', id: 12, tid: 3 }  read stream tick, triggered by root
+     { type: 'FSREQWRAP', id: 13, tid: 11 }  read, triggerd by open of read steam
+     { type: 'FSREQWRAP', id: 14, tid: 13 }  write, triggerd by read of read steam
+     { type: 'FSREQWRAP', id: 15, tid: 13 }  read, next chunk, triggered by first read
+     { type: 'TickObject', id: 16, tid: 13 } stream tick, triggerd by first read
+     { type: 'FSREQWRAP', id: 18, tid: 15 }  close read stream, triggered by last read
+     { type: 'FSREQWRAP', id: 19, tid: 15 }  close write stream, triggered by last read
+
+We reason about that data as follows in order to piece together the WriteStream.
+
+### Connecting WriteSteam Write to WriteStream Close
+
+Write (id: 14) is triggered by read of read stream (id: 13).
+The same read triggers the last read (id: 15).
+That last read triggers the close of the write stream (id: 19).
+
+Therefore we can connect the write stream write to the write stream close since they
+have a common parent in their ancestry (the first read of the read stream).
+
+               -- Read2:15 -- WriteStream:Close:19
+             /
+    Read1:13
+             \
+               -- WriteStream:Write:14
+
+However I would imagine that this breaks down once we have on read stream piped into multiple
+write streams as then the writes have the same Read parent.
+
+### Connecting WriteStream Open to WriteStream Write
+
+There is no 100% way to get this right, but if we assume that the first write happens right after
+the opening of the write stream in the same context we can do the following.
+
+We already know that the common parent of WriteStream:Write and
+WriteStream:Close is Read1:13.
+Therefore we find all WriteStream:Opens that share a parent with Read1:13.
+The ones with the closest parent win.
+
+If we find more than one, we pick the one that was initialized closest to
+the WriteStream:Write timewise, assuming that we write to the stream
+immediately after opening it.
+
+               -- ReadStream:Open:11 -- Read1:13 -- Read2:15 -- WriteStream:Close:19
+             /                                   \
+    Parent:3                                       -- WriteStream:Write:14
+             \
+               -- WriteStream:Open:10
+
+### WriteStreamProcessor.operationSteps
+
+The minimum number of steps, represented as an async resource each,
+involved to execute `fs.createWriteStream`.
+
+This can be used by higher level processors to group
+activities looking for larger operations first and then
+operations involving less steps.
+
+Steps are: open, stream, write+, close
+
+### WriteStreamOperation
+
+Processes a group of async activities that represent a fs write stream operation.
+It is used by the [writeStreamProcessor](#writestreamprocessor) as part of `process`.
+
+Four operation steps are derived from the group, each providing some information
+about the operation in question.
+
+Each step is processed into an operation in the corresponding private method, i.e. `_processOpen`.
+These methods are documented below for information's sake, they should not be called directly,
+nor should you have a need to directly instantiate a `writeStreamOperation` in the first place.
+
+**Parameters**
+
+-   `group` **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>>** the ids of the activities that were part of the operation
+-   `includeActivities` **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** if `true` the activities are attached to
+    each operation step (optional, default `false`)
+
+### writeStreamOperation.\_processOpen
+
+An open doesn't have too much info, but we can glean two very important
+ data points:
+
+1.  the init timestamp tells us when the stream was created
+2.  the last frame of the init stack tells us where `createWriteStream` was called.
+
+**Parameters**
+
+-   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** information about the open step, pre-processed by the `WriteStreamProcessor`.
+
+### writeStreamOperation.\_processTick
+
+The WriteStream Tick gives us a lot of information. It is the same tick object that we process
+in the ReadStreamOperation to glean data about the read stream.
+It has an args array with the ReadStream and its ReadableState respectively.
+
+The ReadableState included the WritableState which the [ah-fs](https://github.com/nodesource/ah-fs) pre-processor
+already plucked for us and added as the 3rd argument.
+Additionally it includes lots of functions including user functions registered with the
+WriteStream, i.e. `on('finish')`.
+
+Ergo the WriteStream provides us the following as part of the WritableState:
+
+1.  the path to the file we are writing into
+2.  the flags with which the file was opened
+3.  the fd (assuming we are dealing with the tick triggered indirectly by the open)
+
+All callbacks on the \_events of the ReadStream and WriteStream have been removed, but are present
+inside the functions object (see below).
+
+The information extracted from the tick is attached to a `stream` property
+provided with the `summary`.
+
+**Parameters**
+
+-   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** information about the tick step, pre-processed by the `WriteStreamProcessor`.
+
+### writeStreamOperation.\_processwrite
+
+The write resource doesn't give us too much information.
+
+The stack traces originate in core and we don't see any registred
+user callbacks, as those are present on the stream instead.
+However we can count the amount of writes that occurred and deduce how
+long each write took from the `before` and `after` timestamps.
+
+**Parameters**
+
+-   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** information about the write step, pre-processed by the `WriteStreamProcessor`.
+
+### writeStreamOperation.\_processClose
+
+The main information we pull from the close resource is the `destroy` timestamp.
+
+Combined with the `init` timestamp of the open resource it allows us to deduce how long
+the write stream was active.
+
+**Parameters**
+
+-   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** information about the close step, pre-processed by the `WriteStreamProcessor`.
 
 ## License
 
