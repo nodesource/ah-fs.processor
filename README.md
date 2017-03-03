@@ -10,62 +10,62 @@ Processes ah-fs data obtained from async resources related to file system opeara
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [API](#api)
-  - [ReadFileProcessor](#readfileprocessor)
-  - [readFileProcessor.process](#readfileprocessorprocess)
-  - [Groups](#groups)
-  - [Operations](#operations)
-    - [`fs.readFile` specific Operation Properties](#fsreadfile-specific-operation-properties)
-    - [General Operation Properties](#general-operation-properties)
-  - [Sample Return Value](#sample-return-value)
-  - [ReadFileProcessor.operationSteps](#readfileprocessoroperationsteps)
-  - [ReadFileOperation](#readfileoperation)
-  - [readFileOperation.\_processOpen](#readfileoperation%5C_processopen)
-  - [readFileOperation.\_processStat](#readfileoperation%5C_processstat)
-  - [readFileOperation.\_processRead](#readfileoperation%5C_processread)
-  - [readFileOperation.\_processClose](#readfileoperation%5C_processclose)
-  - [readFileOperation.summary](#readfileoperationsummary)
-  - [Properties Specific to `fs.readFile`](#properties-specific-to-fsreadfile)
-  - [ReadStreamProcessor](#readstreamprocessor)
-  - [readStreamProcessor.process](#readstreamprocessorprocess)
-  - [Groups](#groups-1)
-  - [Operations](#operations-1)
-    - [`fs.createReadStream` specific Operation Properties](#fscreatereadstream-specific-operation-properties)
-    - [General Operation Properties](#general-operation-properties-1)
-  - [Sample Return Value](#sample-return-value-1)
-  - [ReadStreamProcessor.operationSteps](#readstreamprocessoroperationsteps)
-  - [utils.idsTriggeredBy](#utilsidstriggeredby)
-  - [utils.oldestId](#utilsoldestid)
-  - [immediatelyBeforeId](#immediatelybeforeid)
-  - [utils.prettyNs](#utilsprettyns)
-  - [utils.safeGetVal](#utilssafegetval)
-  - [utils.uniqueUserFunctions](#utilsuniqueuserfunctions)
-  - [utils.separateUserFunctions](#utilsseparateuserfunctions)
-  - [utils.mergeUserFunctions](#utilsmergeuserfunctions)
-  - [ReadStreamOperation](#readstreamoperation)
-  - [readStreamOperation.\_processOpen](#readstreamoperation%5C_processopen)
-  - [readStreamOperation.\_processTick](#readstreamoperation%5C_processtick)
-  - [readStreamOperation.\_processRead](#readstreamoperation%5C_processread)
-  - [readStreamOperation.\_processClose](#readstreamoperation%5C_processclose)
-  - [readStreamOperation.summary](#readstreamoperationsummary)
-  - [Properties Specific to `fs.createReadStream`](#properties-specific-to-fscreatereadstream)
-  - [WriteStreamProcessor](#writestreamprocessor)
-  - [writeStreamProcessor.process](#writestreamprocessorprocess)
-  - [Groups](#groups-2)
-  - [Operations](#operations-2)
-    - [`fs.createWriteStream` specific Operation Properties](#fscreatewritestream-specific-operation-properties)
-    - [General Operation Properties](#general-operation-properties-2)
-  - [Sample Return Value](#sample-return-value-2)
-  - [writeStreamProcessor.\_separteIntoGroups](#writestreamprocessor%5C_separteintogroups)
-  - [Connecting WriteSteam Write to WriteStream Close](#connecting-writesteam-write-to-writestream-close)
-  - [Connecting WriteStream Open to WriteStream Write](#connecting-writestream-open-to-writestream-write)
-  - [WriteStreamProcessor.operationSteps](#writestreamprocessoroperationsteps)
-  - [WriteStreamOperation](#writestreamoperation)
-  - [writeStreamOperation.\_processOpen](#writestreamoperation%5C_processopen)
-  - [writeStreamOperation.\_processTick](#writestreamoperation%5C_processtick)
-  - [writeStreamOperation.\_processwrite](#writestreamoperation%5C_processwrite)
-  - [writeStreamOperation.\_processClose](#writestreamoperation%5C_processclose)
-- [License](#license)
+-   [API](#api)
+    -   [ReadFileProcessor](#readfileprocessor)
+    -   [readFileProcessor.process](#readfileprocessorprocess)
+    -   [Groups](#groups)
+    -   [Operations](#operations)
+        -   [`fs.readFile` specific Operation Properties](#fsreadfile-specific-operation-properties)
+        -   [General Operation Properties](#general-operation-properties)
+    -   [Sample Return Value](#sample-return-value)
+    -   [ReadFileProcessor.operationSteps](#readfileprocessoroperationsteps)
+    -   [ReadFileOperation](#readfileoperation)
+    -   [readFileOperation.\_processOpen](#readfileoperation%5C_processopen)
+    -   [readFileOperation.\_processStat](#readfileoperation%5C_processstat)
+    -   [readFileOperation.\_processRead](#readfileoperation%5C_processread)
+    -   [readFileOperation.\_processClose](#readfileoperation%5C_processclose)
+    -   [readFileOperation.summary](#readfileoperationsummary)
+    -   [Properties Specific to `fs.readFile`](#properties-specific-to-fsreadfile)
+    -   [ReadStreamProcessor](#readstreamprocessor)
+    -   [readStreamProcessor.process](#readstreamprocessorprocess)
+    -   [Groups](#groups-1)
+    -   [Operations](#operations-1)
+        -   [`fs.createReadStream` specific Operation Properties](#fscreatereadstream-specific-operation-properties)
+        -   [General Operation Properties](#general-operation-properties-1)
+    -   [Sample Return Value](#sample-return-value-1)
+    -   [ReadStreamProcessor.operationSteps](#readstreamprocessoroperationsteps)
+    -   [utils.idsTriggeredBy](#utilsidstriggeredby)
+    -   [utils.oldestId](#utilsoldestid)
+    -   [immediatelyBeforeId](#immediatelybeforeid)
+    -   [utils.prettyNs](#utilsprettyns)
+    -   [utils.safeGetVal](#utilssafegetval)
+    -   [utils.uniqueUserFunctions](#utilsuniqueuserfunctions)
+    -   [utils.separateUserFunctions](#utilsseparateuserfunctions)
+    -   [utils.mergeUserFunctions](#utilsmergeuserfunctions)
+    -   [ReadStreamOperation](#readstreamoperation)
+    -   [readStreamOperation.\_processOpen](#readstreamoperation%5C_processopen)
+    -   [readStreamOperation.\_processTick](#readstreamoperation%5C_processtick)
+    -   [readStreamOperation.\_processRead](#readstreamoperation%5C_processread)
+    -   [readStreamOperation.\_processClose](#readstreamoperation%5C_processclose)
+    -   [readStreamOperation.summary](#readstreamoperationsummary)
+    -   [Properties Specific to `fs.createReadStream`](#properties-specific-to-fscreatereadstream)
+    -   [WriteStreamProcessor](#writestreamprocessor)
+    -   [writeStreamProcessor.process](#writestreamprocessorprocess)
+    -   [Groups](#groups-2)
+    -   [Operations](#operations-2)
+        -   [`fs.createWriteStream` specific Operation Properties](#fscreatewritestream-specific-operation-properties)
+        -   [General Operation Properties](#general-operation-properties-2)
+    -   [Sample Return Value](#sample-return-value-2)
+    -   [writeStreamProcessor.\_separteIntoGroups](#writestreamprocessor%5C_separteintogroups)
+    -   [Connecting WriteSteam Write to WriteStream Close](#connecting-writesteam-write-to-writestream-close)
+    -   [Connecting WriteStream Open to WriteStream Write](#connecting-writestream-open-to-writestream-write)
+    -   [WriteStreamProcessor.operationSteps](#writestreamprocessoroperationsteps)
+    -   [WriteStreamOperation](#writestreamoperation)
+    -   [writeStreamOperation.\_processOpen](#writestreamoperation%5C_processopen)
+    -   [writeStreamOperation.\_processTick](#writestreamoperation%5C_processtick)
+    -   [writeStreamOperation.\_processwrite](#writestreamoperation%5C_processwrite)
+    -   [writeStreamOperation.\_processClose](#writestreamoperation%5C_processclose)
+-   [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -414,118 +414,6 @@ activities looking for larger operations first and then
 operations involving less steps.
 
 Steps are: open, stream+, read+, close
-
-### utils.idsTriggeredBy
-
-Finds all ids of activities that are triggered by the given id.
-This function works recursive, i.e. any activity triggered by
-a child of the root activity is included as well.
-
-For this to work, activities are assumed to be in the order that
-they were triggered. This can easily be achieved by simply sorting
-the activities by their init timestamp.
-
-**Parameters**
-
--   `activities` **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), Activity>** collected via [ah-fs](https://github.com/nodesource/ah-fs)
--   `id` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the id of the root activity we whose triggered _children_ we are trying to find
--   `stop` **[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** a predicate that will finish the activity walk if it returns `true`.
-     Function signature: `(id, activity)`.
-
-Returns **[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** the provided root id and all ids of activities triggered by it or any of it's children,
-grandchildren, etc.
-
-### utils.oldestId
-
-Finds the oldest activity of the ones supplied via the ids.
-We consider an activity older than another one if it's init timestamp
-is further in the past.
-
-Any ids we can't find as in the activities are ignored.
-
-**Parameters**
-
--   `activities` **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** the collected async activities
--   `ids` **[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** the ids to consider when finding the oldest
-
-Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the id of the oldest activity or `null` if no activity for any id was found
-
-### immediatelyBeforeId
-
-Finds the activity of the ones supplied via the ids that initialized immediately
-before the one with the given id initialized.
-
-**Parameters**
-
--   `activities` **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** the collected async activities
--   `ids` **[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** the ids to consider when finding most immediate
--   `the` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** id of the activity for which we will find the activity that initialized immediately before
-
-Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the id that initialized immediately before the activity with `id` or `null` if no activity for any
-id was found
-
-### utils.prettyNs
-
-Prettifies the provided timestamp which is expected to be in nanoseconds.
-
-**Parameters**
-
--   `ns` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** timestamp in nanoseconds
-
-Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** an object with an `ms` property which is the prettified version
-of the provided timestamp in milliseconds and `ns`, the originally passed timestamp.
-
-### utils.safeGetVal
-
-Safely extracts the `val` property from the object `x`.
-
-**Parameters**
-
--   `x` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** the object which has the `val` property
-
-Returns **any** the `val` property if `x` was defined, otherwise `null`
-
-### utils.uniqueUserFunctions
-
-Identifies all user functions within the given functions, adds location and
-propertyPath strings and returns the result.
-
-The `propertyPath` is deduced from the `path` array.
-
-If a user function is found twice it will only be included once.
-
-**Parameters**
-
--   `fns` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** all functions found attached to a particular async resource
--   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** options
-    -   `$0.pathPrefix` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** prefix used for the property paths (optional, default `'root'`)
-
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** all user functions with the above mentioned details added
-
-### utils.separateUserFunctions
-
-Pulls user functions from all resources of the provided info and attaches
-them as the `userFunctions` property to the info object directly.
-
-As a result, instead of having a `userFunctions` array on each resource
-we end up with just one on the info object.
-
-**Parameters**
-
--   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** the info object which references the resources
-
-### utils.mergeUserFunctions
-
-Merges the `userFunctions` found on the `info` object, such that all functions
-with the same `location` property are represented as one.
-
-As the result the `propertyPath` array is removed from all functions and replaced
-with the `propertyPaths` array which combines the `propertyPath`s of all functions
-that matched the `location`.
-
-**Parameters**
-
--   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** the object that references the `userFunctions` property
 
 ### ReadStreamOperation
 
@@ -883,6 +771,302 @@ the write stream was active.
 **Parameters**
 
 -   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** information about the close step, pre-processed by the `WriteStreamProcessor`.
+
+### openInitFrame0Rx
+
+Sample initStack of writeFile open, calles as first operation of `fs.writeFile`.
+In order to be sure this is a writeFile open we need to check the two topmost frames.
+
+"at Object.fs.open (fs.js:581:11)",
+"at Object.fs.writeFile (fs.js:1155:6)",
+"at Test.<anonymous> (/Volumes/d/dev/js/async-hooks/ah-fs/test/write-one-file.js:28:6)",
+
+Code at fs.js:581:
+
+`binding.open(pathModule._makeLong(path), ...`
+
+Code at fs.js:1155:
+
+`fs.open(path, flag, options.mode, function(openErr, fd) ...`
+
+Bottom frame has info about where the call `fs.writeFile` originated.
+
+### writeInitFrame0Rx
+
+Sample init stack of writeFile write, called afer `fs.open` completes:
+
+"at Object.fs.write (fs.js:643:20)",
+"at writeAll (fs.js:1117:6)",
+"at writeFd (fs.js:1168:5)",
+"at fs.js:1159:7",
+"at FSReqWrap.oncomplete (fs.js:117:15)"
+
+Code at fs.js:643:
+
+`binding.writeBuffer(fd, buffer, offset, length, position, req);`
+
+### closeInitFrame0Rx
+
+Sample initStack of writeFile close, called after last `fs.write` completes:
+
+"at Object.fs.close (fs.js:555:11)",
+"at fs.js:1131:14",
+"at FSReqWrap.wrapper [as oncomplete](fs.js:626:5)"
+
+Code at fs.js:555:
+
+`binding.close(fd, req);`
+
+### WriteFileProcessor
+
+Instantiates an fs.writeFile data processor to process data collected via
+[nodesource/ah-fs](https://github.com/nodesource/ah-fs)
+
+**Parameters**
+
+-   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+-   `includeActivities` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** if `true` the actual activities are appended to the output (optional, default `false`)
+
+### writeFileProcessor.process
+
+Processes the supplied async activities and splits them into
+groups, and operations each representing a file read stream `fs.createWriteFile`.
+
+### Groups
+
+The returned value has a `groups` property which just lists the ids
+of async resources that were grouped together to form an operation
+indexed by the id of the `fs.open` activity that was part of the `fs.writeFile`.
+Thus the `groups` is a map of sets.
+If no file write file was encountered the groups are empty.
+
+### Operations
+
+Additionally an `operations` property is included as well. Each operation
+represents one full `fs.writeFile` execution. There will be one operation per
+group and they are indexed by the corresponding open id as well.
+
+An `operation` has the following properties:
+
+#### `fs.createWriteFile` specific Operation Properties
+
+ Data about the async resources that were part of the operation, by default
+ only `id` and `triggerId` are included:
+
+-   **open**: contains data about opening the file
+-   **writes**: an Array of writes, each containing data about writing a
+    chunk from the file including the time spent to complete writing the
+    particular chunk
+-   **close**: contains data about closing the file
+
+#### General Operation Properties
+
+-   [see ReadFileProcessor.process](https://nodesource.github.io/ah-fs.processor/#general-operation-properties)
+
+### Sample Return Value
+
+The sample return value was created with default options.
+
+```js
+{ groups: Map { 10 => Set { 10, 11, 12 } },
+  operations:
+  Map {
+    10 => { lifeCycle:
+      { created: { ms: '24.49ms', ns: 24491000 },
+        destroyed: { ms: '33.96ms', ns: 33964000 },
+        timeAlive: { ms: '9.47ms', ns: 9473000 } },
+    createdAt: 'at Test.<anonymous> (/Volumes/d/dev/js/async-hooks/ah-fs/test/write-one-file.js:28:6)',
+    open: { id: 10, triggerId: 1 },
+    write: { id: 11, triggerId: 10 },
+    close: { id: 12, triggerId: 11 } } } }
+```
+
+Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** information about `fs.createWriteFile` operations with the
+structure outlined above
+
+### utils.idsTriggeredBy
+
+Finds all ids of activities that are triggered by the given id.
+This function works recursive, i.e. any activity triggered by
+a child of the root activity is included as well.
+
+For this to work, activities are assumed to be in the order that
+they were triggered. This can easily be achieved by simply sorting
+the activities by their init timestamp.
+
+**Parameters**
+
+-   `activities` **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), Activity>** collected via [ah-fs](https://github.com/nodesource/ah-fs)
+-   `id` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the id of the root activity we whose triggered _children_ we are trying to find
+-   `stop` **[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** a predicate that will finish the activity walk if it returns `true`.
+     Function signature: `(id, activity)`.
+
+Returns **[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** the provided root id and all ids of activities triggered by it or any of it's children,
+grandchildren, etc.
+
+### utils.oldestId
+
+Finds the oldest activity of the ones supplied via the ids.
+We consider an activity older than another one if it's init timestamp
+is further in the past.
+
+Any ids we can't find as in the activities are ignored.
+
+**Parameters**
+
+-   `activities` **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** the collected async activities
+-   `ids` **[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** the ids to consider when finding the oldest
+
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the id of the oldest activity or `null` if no activity for any id was found
+
+### immediatelyBeforeId
+
+Finds the activity of the ones supplied via the ids that initialized immediately
+before the one with the given id initialized.
+
+**Parameters**
+
+-   `activities` **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** the collected async activities
+-   `ids` **[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** the ids to consider when finding most immediate
+-   `the` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** id of the activity for which we will find the activity that initialized immediately before
+
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the id that initialized immediately before the activity with `id` or `null` if no activity for any
+id was found
+
+### utils.prettyNs
+
+Prettifies the provided timestamp which is expected to be in nanoseconds.
+
+**Parameters**
+
+-   `ns` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** timestamp in nanoseconds
+
+Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** an object with an `ms` property which is the prettified version
+of the provided timestamp in milliseconds and `ns`, the originally passed timestamp.
+
+### utils.safeGetVal
+
+Safely extracts the `val` property from the object `x`.
+
+**Parameters**
+
+-   `x` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** the object which has the `val` property
+
+Returns **any** the `val` property if `x` was defined, otherwise `null`
+
+### utils.uniqueUserFunctions
+
+Identifies all user functions within the given functions, adds location and
+propertyPath strings and returns the result.
+
+The `propertyPath` is deduced from the `path` array.
+
+If a user function is found twice it will only be included once.
+
+**Parameters**
+
+-   `fns` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** all functions found attached to a particular async resource
+-   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** options
+    -   `$0.pathPrefix` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** prefix used for the property paths (optional, default `'root'`)
+
+Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** all user functions with the above mentioned details added
+
+### utils.separateUserFunctions
+
+Pulls user functions from all resources of the provided info and attaches
+them as the `userFunctions` property to the info object directly.
+
+As a result, instead of having a `userFunctions` array on each resource
+we end up with just one on the info object.
+
+**Parameters**
+
+-   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** the info object which references the resources
+
+### utils.mergeUserFunctions
+
+Merges the `userFunctions` found on the `info` object, such that all functions
+with the same `location` property are represented as one.
+
+As the result the `propertyPath` array is removed from all functions and replaced
+with the `propertyPaths` array which combines the `propertyPath`s of all functions
+that matched the `location`.
+
+**Parameters**
+
+-   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** the object that references the `userFunctions` property
+
+### WriteFileOperation
+
+Processes a group of async activities that represent a fs write file operation.
+It is used by the [WriteFileProcessor](#WriteFileProcessor) as part of `process`.
+
+Three operation steps are derived from the group, each providing some information
+about the operation in question.
+
+Each step is processed into an operation in the corresponding private method, i.e. `_processOpen`.
+These methods are documented below for information's sake, they should not be called directly,
+nor should you have a need to directly instantiate a `WriteFileOperation` in the first place.
+
+**Parameters**
+
+-   `group` **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>>** the ids of the activities that were part of the operation
+-   `includeActivities` **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** if `true` the activities are attached to
+    each operation step (optional, default `false`)
+
+### writeFileOperation.\_processOpen
+
+The open resource tells us where in user code the `fs.writeFile` originated
+via the second frame of the stack trace, as well as when the operation
+was created.
+
+**Parameters**
+
+-   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** information about the open step, pre-processed by the `WriteFileProcessor`.
+
+### writeFileOperation.\_processWrite
+
+The write resource gives us no interesting information.
+Therefore we just capture the `id`, `triggerId` and if so desired
+attach the activities.
+
+**Parameters**
+
+-   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** information about the write step, pre-processed by the `WriteFileProcessor`.
+
+### writeFileOperation.\_processClose
+
+The main information we pull from the close resource is the `destroy` timestamp.
+
+Combined with the `init` timestamp of the open resource it allows us to deduce how long
+the file write took.
+
+**Parameters**
+
+-   `info` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** information about the close step, pre-processed by the `WriteFileProcessor`.
+
+### writeFileOperation.summary
+
+Returns the summary of processing the group into an operation.
+
+The summary of all operations has a very similar structure, but includes some properties that are specific to this
+particular operation.
+
+The general properties `lifeCycle` and `createdAt` are documented as part of
+the `WriteFileProcessor`.
+Therefore learn more [here](#general-operation-properties).
+
+### Properties Specific to `fs.writeFile`
+
+-   **open**: see `writeFileOperation._processOpen`
+-   **write**: see `writeFileOperation._processWrite`
+-   **close**: see `writeFileOperation._processClose`
+
+Note this summary function takes no parameters (like the other Operations) since
+we don't find any user functions related to the write file operation and thus
+have nothing to process.
+
+Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** all important information about the current operation
 
 ## License
 
