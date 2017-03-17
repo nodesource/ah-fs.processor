@@ -19,6 +19,7 @@ Processes ah-fs data obtained from async resources related to file system opeara
     - [General Operation Properties](#general-operation-properties)
   - [Sample Return Value](#sample-return-value)
   - [ReadFileProcessor.operationSteps](#readfileprocessoroperationsteps)
+  - [ReadFileProcessor.operation.null](#readfileprocessoroperationnull)
   - [ReadFileOperation](#readfileoperation)
   - [readFileOperation.\_processOpen](#readfileoperation%5C_processopen)
   - [readFileOperation.\_processStat](#readfileoperation%5C_processstat)
@@ -34,6 +35,7 @@ Processes ah-fs data obtained from async resources related to file system opeara
     - [General Operation Properties](#general-operation-properties-1)
   - [Sample Return Value](#sample-return-value-1)
   - [ReadStreamProcessor.operationSteps](#readstreamprocessoroperationsteps)
+  - [ReadStreamProcessor.operation.null](#readstreamprocessoroperationnull)
   - [ReadStreamOperation](#readstreamoperation)
   - [readStreamOperation.\_processOpen](#readstreamoperation%5C_processopen)
   - [readStreamOperation.\_processTick](#readstreamoperation%5C_processtick)
@@ -51,6 +53,8 @@ Processes ah-fs data obtained from async resources related to file system opeara
     - [`fs.createWriteFile` specific Operation Properties](#fscreatewritefile-specific-operation-properties)
     - [General Operation Properties](#general-operation-properties-2)
   - [Sample Return Value](#sample-return-value-2)
+  - [WriteFileProcessor.operationSteps](#writefileprocessoroperationsteps)
+  - [WriteFileProcessor.operation.null](#writefileprocessoroperationnull)
   - [WriteFileOperation](#writefileoperation)
   - [writeFileOperation.\_processOpen](#writefileoperation%5C_processopen)
   - [writeFileOperation.\_processWrite](#writefileoperation%5C_processwrite)
@@ -68,6 +72,7 @@ Processes ah-fs data obtained from async resources related to file system opeara
   - [Connecting WriteSteam Write to WriteStream Close](#connecting-writesteam-write-to-writestream-close)
   - [Connecting WriteStream Open to WriteStream Write](#connecting-writestream-open-to-writestream-write)
   - [WriteStreamProcessor.operationSteps](#writestreamprocessoroperationsteps)
+  - [WriteStreamProcessor.operation.null](#writestreamprocessoroperationnull)
   - [WriteStreamOperation](#writestreamoperation)
   - [writeStreamOperation.\_processOpen](#writestreamoperation%5C_processopen)
   - [writeStreamOperation.\_processTick](#writestreamoperation%5C_processtick)
@@ -100,7 +105,7 @@ groups, and operations each representing a file read `fs.readFile`.
 
 The returned value has a `groups` property which just lists the ids
 of async resources that were grouped together to form an operation
-indexed by the `fd` on which the readFile operated.
+indexed by the id of the `open` resource.
 Thus the `groups` is a map of sets.
 If no file read was encountered the groups are empty.
 
@@ -108,7 +113,7 @@ If no file read was encountered the groups are empty.
 
 Additionally an `operations` property is included as well. Each operation
 represents one full `fs.readFile` execution. There will be one operation per
-group and they are indexed by the corresponding `fd` as well.
+group and they are indexed by the corresponding open resource `id` as well.
 
 An `operation` has the following properties:
 
@@ -169,10 +174,10 @@ Data that links to user code that is responsible for the operation occurring.
 The sample return value was created with default options.
 
 ```js
-{ groups: Map { 17 => Set { 10, 11, 12, 13 } },
+{ groups: Map { 10 => Set { 10, 11, 12, 13 } },
   operations:
     Map {
-      17 => { lifeCycle:
+      10 => { lifeCycle:
         { created: { ms: '44.12ms', ns: 44119000 },
           destroyed: { ms: '85.95ms', ns: 85955000 },
           timeAlive: { ms: '41.84ms', ns: 41836000 } },
@@ -218,6 +223,10 @@ activities looking for larger operations first and then
 operations involving less steps.
 
 Steps are: open, stat, read+, close
+
+### ReadFileProcessor.operation.null
+
+Description of the operation: 'fs.readFile'.
 
 ### ReadFileOperation
 
@@ -422,6 +431,10 @@ activities looking for larger operations first and then
 operations involving less steps.
 
 Steps are: open, stream+, read+, close
+
+### ReadStreamProcessor.operation.null
+
+Description of the operation: 'fs.createReadStream'.
 
 ### ReadStreamOperation
 
@@ -647,6 +660,21 @@ The sample return value was created with default options.
 
 Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** information about `fs.createWriteFile` operations with the
 structure outlined above
+
+### WriteFileProcessor.operationSteps
+
+The minimum number of steps, represented as an async resource each,
+involved to execute `fs.writeFile`.
+
+This can be used by higher level processors to group
+activities looking for larger operations first and then
+operations involving less steps.
+
+Steps are: open, write+, close
+
+### WriteFileProcessor.operation.null
+
+Description of the operation: 'fs.writeFile'.
 
 ### WriteFileOperation
 
@@ -882,6 +910,10 @@ activities looking for larger operations first and then
 operations involving less steps.
 
 Steps are: open, stream, write+, close
+
+### WriteStreamProcessor.operation.null
+
+Description of the operation: 'fs.createWriteStream'.
 
 ### WriteStreamOperation
 
