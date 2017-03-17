@@ -1,8 +1,8 @@
 const ocat = require('ocat')
 ocat.opts = {
-  prefix: '    spok(t, res,\n',
-  suffix: '\n    )',
-  indent: '      ',
+  prefix: '  spok(t, op,\n',
+  suffix: '\n  )',
+  indent: '   ',
   depth: 5
 }
 

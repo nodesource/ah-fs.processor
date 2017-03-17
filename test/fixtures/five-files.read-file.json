@@ -1,0 +1,1762 @@
+[
+  [
+    5,
+    {
+      "id": 5,
+      "type": "FSREQWRAP",
+      "triggerId": 2,
+      "init": [
+        208481000
+      ],
+      "initStack": [
+        "at Object.fs.readFile (fs.js:295:11)",
+        "at Server.onconnection (/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server:50:6)",
+        "at emitOne (events.js:96:13)",
+        "at Server.emit (events.js:189:7)",
+        "at TCP.onconnection (net.js:1469:8)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 13,
+          "isUserFd": false,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": null,
+          "pos": 0,
+          "err": null,
+          "_asyncId": 5,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 5,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        209324000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        209779000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        213250000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    6,
+    {
+      "id": 6,
+      "type": "FSREQWRAP",
+      "triggerId": 5,
+      "init": [
+        209555000
+      ],
+      "initStack": [
+        "at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:380:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 13,
+          "isUserFd": false,
+          "size": 1405,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 1405,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                102,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110,
+                32,
+                98,
+                121,
+                67,
+                114,
+                101,
+                97,
+                116,
+                101,
+                100
+              ]
+            }
+          },
+          "pos": 0,
+          "err": null,
+          "_asyncId": 7,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 6,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        213375000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        213874000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        221228000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    7,
+    {
+      "id": 7,
+      "type": "FSREQWRAP",
+      "triggerId": 6,
+      "init": [
+        213753000
+      ],
+      "initStack": [
+        "at ReadFileContext.read (fs.js:340:11)",
+        "at FSReqWrap.readFileAfterStat [as oncomplete] (fs.js:404:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 13,
+          "isUserFd": false,
+          "size": 1405,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 1405,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                102,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110,
+                32,
+                98,
+                121,
+                67,
+                114,
+                101,
+                97,
+                116,
+                101,
+                100
+              ]
+            }
+          },
+          "pos": 1405,
+          "_asyncId": 8,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 7,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        221325000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        221705000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        224531000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    8,
+    {
+      "id": 8,
+      "type": "FSREQWRAP",
+      "triggerId": 7,
+      "init": [
+        221566000
+      ],
+      "initStack": [
+        "at ReadFileContext.close (fs.js:363:11)",
+        "at FSReqWrap.readFileAfterRead [as oncomplete] (fs.js:420:15)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 13,
+          "isUserFd": false,
+          "size": 1405,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 1405,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                102,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110,
+                32,
+                98,
+                121,
+                67,
+                114,
+                101,
+                97,
+                116,
+                101,
+                100
+              ]
+            }
+          },
+          "pos": 1405,
+          "_asyncId": 8,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 8,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        224599000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        225460000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        227514000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    14,
+    {
+      "id": 14,
+      "type": "FSREQWRAP",
+      "triggerId": 2,
+      "init": [
+        320064000
+      ],
+      "initStack": [
+        "at Object.fs.readFile (fs.js:295:11)",
+        "at Server.onconnection (/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server:50:6)",
+        "at emitOne (events.js:96:13)",
+        "at Server.emit (events.js:189:7)",
+        "at TCP.onconnection (net.js:1469:8)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": null,
+          "pos": 0,
+          "err": null,
+          "_asyncId": 14,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 14,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        320277000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        320400000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        320636000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    15,
+    {
+      "id": 15,
+      "type": "FSREQWRAP",
+      "triggerId": 14,
+      "init": [
+        320338000
+      ],
+      "initStack": [
+        "at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:380:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 2829,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 2829,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                99,
+                111,
+                110,
+                115,
+                116,
+                32,
+                123,
+                10,
+                32,
+                32,
+                114,
+                101,
+                110,
+                100,
+                101,
+                114,
+                70,
+                117
+              ]
+            }
+          },
+          "pos": 0,
+          "err": null,
+          "_asyncId": 16,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 15,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        320677000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        320838000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        326312000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    16,
+    {
+      "id": 16,
+      "type": "FSREQWRAP",
+      "triggerId": 15,
+      "init": [
+        320776000
+      ],
+      "initStack": [
+        "at ReadFileContext.read (fs.js:340:11)",
+        "at FSReqWrap.readFileAfterStat [as oncomplete] (fs.js:404:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 2829,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 2829,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                99,
+                111,
+                110,
+                115,
+                116,
+                32,
+                123,
+                10,
+                32,
+                32,
+                114,
+                101,
+                110,
+                100,
+                101,
+                114,
+                70,
+                117
+              ]
+            }
+          },
+          "pos": 2829,
+          "_asyncId": 17,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 16,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        326373000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        326605000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        331049000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    17,
+    {
+      "id": 17,
+      "type": "FSREQWRAP",
+      "triggerId": 16,
+      "init": [
+        326527000
+      ],
+      "initStack": [
+        "at ReadFileContext.close (fs.js:363:11)",
+        "at FSReqWrap.readFileAfterRead [as oncomplete] (fs.js:420:15)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 2829,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 2829,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                99,
+                111,
+                110,
+                115,
+                116,
+                32,
+                123,
+                10,
+                32,
+                32,
+                114,
+                101,
+                110,
+                100,
+                101,
+                114,
+                70,
+                117
+              ]
+            }
+          },
+          "pos": 2829,
+          "_asyncId": 17,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 17,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        331117000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        331545000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        335437000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    21,
+    {
+      "id": 21,
+      "type": "FSREQWRAP",
+      "triggerId": 2,
+      "init": [
+        424167000
+      ],
+      "initStack": [
+        "at Object.fs.readFile (fs.js:295:11)",
+        "at Server.onconnection (/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server:50:6)",
+        "at emitOne (events.js:96:13)",
+        "at Server.emit (events.js:189:7)",
+        "at TCP.onconnection (net.js:1469:8)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": null,
+          "pos": 0,
+          "err": null,
+          "_asyncId": 21,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 21,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        424325000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        424439000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        424589000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    22,
+    {
+      "id": 22,
+      "type": "FSREQWRAP",
+      "triggerId": 21,
+      "init": [
+        424375000
+      ],
+      "initStack": [
+        "at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:380:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 697,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 697,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                99,
+                108,
+                97,
+                115,
+                115,
+                32,
+                80,
+                111,
+                115,
+                105,
+                116,
+                105,
+                111,
+                110,
+                32,
+                123,
+                10,
+                32
+              ]
+            }
+          },
+          "pos": 0,
+          "err": null,
+          "_asyncId": 23,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 22,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        424637000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        424733000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        425853000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    23,
+    {
+      "id": 23,
+      "type": "FSREQWRAP",
+      "triggerId": 22,
+      "init": [
+        424678000
+      ],
+      "initStack": [
+        "at ReadFileContext.read (fs.js:340:11)",
+        "at FSReqWrap.readFileAfterStat [as oncomplete] (fs.js:404:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 697,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 697,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                99,
+                108,
+                97,
+                115,
+                115,
+                32,
+                80,
+                111,
+                115,
+                105,
+                116,
+                105,
+                111,
+                110,
+                32,
+                123,
+                10,
+                32
+              ]
+            }
+          },
+          "pos": 697,
+          "_asyncId": 24,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 23,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        425886000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        425967000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        426957000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    24,
+    {
+      "id": 24,
+      "type": "FSREQWRAP",
+      "triggerId": 23,
+      "init": [
+        425915000
+      ],
+      "initStack": [
+        "at ReadFileContext.close (fs.js:363:11)",
+        "at FSReqWrap.readFileAfterRead [as oncomplete] (fs.js:420:15)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 697,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 697,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                99,
+                108,
+                97,
+                115,
+                115,
+                32,
+                80,
+                111,
+                115,
+                105,
+                116,
+                105,
+                111,
+                110,
+                32,
+                123,
+                10,
+                32
+              ]
+            }
+          },
+          "pos": 697,
+          "_asyncId": 24,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 24,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        426991000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        427103000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        428556000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    28,
+    {
+      "id": 28,
+      "type": "FSREQWRAP",
+      "triggerId": 2,
+      "init": [
+        517058000
+      ],
+      "initStack": [
+        "at Object.fs.readFile (fs.js:295:11)",
+        "at Server.onconnection (/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server:50:6)",
+        "at emitOne (events.js:96:13)",
+        "at Server.emit (events.js:189:7)",
+        "at TCP.onconnection (net.js:1469:8)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": null,
+          "pos": 0,
+          "err": null,
+          "_asyncId": 28,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 28,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        517186000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        517285000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        517517000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    29,
+    {
+      "id": 29,
+      "type": "FSREQWRAP",
+      "triggerId": 28,
+      "init": [
+        517218000
+      ],
+      "initStack": [
+        "at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:380:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 944,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 944,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                109,
+                111,
+                100,
+                117,
+                108,
+                101,
+                46,
+                101,
+                120,
+                112,
+                111,
+                114,
+                116,
+                115,
+                32,
+                61,
+                32,
+                102
+              ]
+            }
+          },
+          "pos": 0,
+          "err": null,
+          "_asyncId": 30,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 29,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        517559000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        517655000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        519474000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    30,
+    {
+      "id": 30,
+      "type": "FSREQWRAP",
+      "triggerId": 29,
+      "init": [
+        517599000
+      ],
+      "initStack": [
+        "at ReadFileContext.read (fs.js:340:11)",
+        "at FSReqWrap.readFileAfterStat [as oncomplete] (fs.js:404:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 944,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 944,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                109,
+                111,
+                100,
+                117,
+                108,
+                101,
+                46,
+                101,
+                120,
+                112,
+                111,
+                114,
+                116,
+                115,
+                32,
+                61,
+                32,
+                102
+              ]
+            }
+          },
+          "pos": 944,
+          "_asyncId": 31,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 30,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        519518000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        519686000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        522097000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    31,
+    {
+      "id": 31,
+      "type": "FSREQWRAP",
+      "triggerId": 30,
+      "init": [
+        519604000
+      ],
+      "initStack": [
+        "at ReadFileContext.close (fs.js:363:11)",
+        "at FSReqWrap.readFileAfterRead [as oncomplete] (fs.js:420:15)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 944,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 944,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                109,
+                111,
+                100,
+                117,
+                108,
+                101,
+                46,
+                101,
+                120,
+                112,
+                111,
+                114,
+                116,
+                115,
+                32,
+                61,
+                32,
+                102
+              ]
+            }
+          },
+          "pos": 944,
+          "_asyncId": 31,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 31,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        522135000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        522255000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        523552000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    35,
+    {
+      "id": 35,
+      "type": "FSREQWRAP",
+      "triggerId": 2,
+      "init": [
+        619886000
+      ],
+      "initStack": [
+        "at Object.fs.readFile (fs.js:295:11)",
+        "at Server.onconnection (/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server:50:6)",
+        "at emitOne (events.js:96:13)",
+        "at Server.emit (events.js:189:7)",
+        "at TCP.onconnection (net.js:1469:8)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": null,
+          "pos": 0,
+          "err": null,
+          "_asyncId": 35,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 35,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        620131000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        620399000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        620688000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    36,
+    {
+      "id": 36,
+      "type": "FSREQWRAP",
+      "triggerId": 35,
+      "init": [
+        620186000
+      ],
+      "initStack": [
+        "at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:380:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 460,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 460,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                102,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110,
+                32,
+                114,
+                101,
+                110,
+                100,
+                101,
+                114,
+                70,
+                117,
+                110
+              ]
+            }
+          },
+          "pos": 0,
+          "err": null,
+          "_asyncId": 37,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 36,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        620735000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        621136000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        622399000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    37,
+    {
+      "id": 37,
+      "type": "FSREQWRAP",
+      "triggerId": 36,
+      "init": [
+        620782000
+      ],
+      "initStack": [
+        "at ReadFileContext.read (fs.js:340:11)",
+        "at FSReqWrap.readFileAfterStat [as oncomplete] (fs.js:404:11)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 460,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 460,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                102,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110,
+                32,
+                114,
+                101,
+                110,
+                100,
+                101,
+                114,
+                70,
+                117,
+                110
+              ]
+            }
+          },
+          "pos": 460,
+          "_asyncId": 38,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 37,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        622761000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        622866000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        623964000
+      ],
+      "destroyStack": []
+    }
+  ],
+  [
+    38,
+    {
+      "id": 38,
+      "type": "FSREQWRAP",
+      "triggerId": 37,
+      "init": [
+        622800000
+      ],
+      "initStack": [
+        "at ReadFileContext.close (fs.js:363:11)",
+        "at FSReqWrap.readFileAfterRead [as oncomplete] (fs.js:420:15)"
+      ],
+      "resource": {
+        "context": {
+          "fd": 14,
+          "isUserFd": false,
+          "size": 460,
+          "callback": {
+            "type": "function",
+            "proto": null,
+            "val": "<deleted>"
+          },
+          "buffers": null,
+          "buffer": {
+            "type": "Buffer",
+            "len": 460,
+            "included": 18,
+            "val": {
+              "type": "Buffer",
+              "data": [
+                102,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110,
+                32,
+                114,
+                101,
+                110,
+                100,
+                101,
+                114,
+                70,
+                117,
+                110
+              ]
+            }
+          },
+          "pos": 460,
+          "_asyncId": 38,
+          "proto": "ReadFileContext"
+        },
+        "functions": [
+          {
+            "path": [
+              "context",
+              "callback"
+            ],
+            "key": "callback",
+            "level": 1,
+            "info": {
+              "file": "/Volumes/d/dev/js/async-hooks/ah-demos/demos/tcp-fs/server",
+              "line": 51,
+              "column": 21,
+              "inferredName": "",
+              "name": "onreadFile"
+            },
+            "id": 38,
+            "arguments": null
+          }
+        ]
+      },
+      "before": [
+        624007000
+      ],
+      "beforeStacks": [
+        []
+      ],
+      "after": [
+        624421000
+      ],
+      "afterStacks": [
+        []
+      ],
+      "destroy": [
+        625957000
+      ],
+      "destroyStack": []
+    }
+  ]
+]

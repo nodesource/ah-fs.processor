@@ -4,7 +4,7 @@ const ocat = require('./utils/ocat')
 const spok = require('spok')
 
 const { ReadFileProcessor } = require('../')
-const OPENID = 17
+const OPENID = 10
 
 // eslint-disable-next-line no-unused-vars
 function inspect(obj, depth) {
@@ -17,7 +17,7 @@ test('\nactivities with one file read, not including activities, separate functi
   const separateFunctions = true
   const { groups, operations } =
     new ReadFileProcessor({ activities, includeActivities, separateFunctions }).process()
-  t.equal(groups.size, 1, 'finds one read stream group')
+  t.equal(groups.size, 1, 'finds one read file group')
   const groupMembers = [ 10, 11, 12, 13 ]
   groupMembers.$topic = 'group members'
   spok(t, Array.from(groups.get(OPENID)), groupMembers)
