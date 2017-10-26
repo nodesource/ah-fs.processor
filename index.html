@@ -1,0 +1,3667 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>  | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation'>
+  <div class='max-width-4 mx-auto'>
+    <div class='clearfix md-mxn2'>
+      <div class='fixed xs-hide fix-3 overflow-auto max-height-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'></h3>
+          <div class='mb1'><code></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#processfilesystem'
+                  class="">
+                  processFileSystem
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readfileprocessor'
+                  class="">
+                  ReadFileProcessor
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readfileprocessorprocess'
+                  class="">
+                  readFileProcessor.process
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readfileprocessoroperationsteps'
+                  class="">
+                  ReadFileProcessor.operationSteps
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readfileprocessoroperation'
+                  class="">
+                  ReadFileProcessor.operation
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readfileoperation'
+                  class="">
+                  ReadFileOperation
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readfileoperation_processopen'
+                  class="">
+                  readFileOperation._processOpen
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readfileoperation_processstat'
+                  class="">
+                  readFileOperation._processStat
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readfileoperation_processread'
+                  class="">
+                  readFileOperation._processRead
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readfileoperation_processclose'
+                  class="">
+                  readFileOperation._processClose
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readfileoperationsummary'
+                  class="">
+                  readFileOperation.summary
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readstreamprocessor'
+                  class="">
+                  ReadStreamProcessor
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readstreamprocessorprocess'
+                  class="">
+                  readStreamProcessor.process
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readstreamprocessoroperationsteps'
+                  class="">
+                  ReadStreamProcessor.operationSteps
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readstreamprocessoroperationnull'
+                  class="">
+                  ReadStreamProcessor.operation.null
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readstreamoperation'
+                  class="">
+                  ReadStreamOperation
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readstreamoperation_processopen'
+                  class="">
+                  readStreamOperation._processOpen
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readstreamoperation_processtick'
+                  class="">
+                  readStreamOperation._processTick
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readstreamoperation_processread'
+                  class="">
+                  readStreamOperation._processRead
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readstreamoperation_processclose'
+                  class="">
+                  readStreamOperation._processClose
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#readstreamoperationsummary'
+                  class="">
+                  readStreamOperation.summary
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#openinitframe0rx'
+                  class="">
+                  openInitFrame0Rx
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writeinitframe0rx'
+                  class="">
+                  writeInitFrame0Rx
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#closeinitframe0rx'
+                  class="">
+                  closeInitFrame0Rx
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writefileprocessor'
+                  class="">
+                  WriteFileProcessor
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writefileprocessorprocess'
+                  class="">
+                  writeFileProcessor.process
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writefileprocessoroperationsteps'
+                  class="">
+                  WriteFileProcessor.operationSteps
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writefileprocessoroperationnull'
+                  class="">
+                  WriteFileProcessor.operation.null
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writefileoperation'
+                  class="">
+                  WriteFileOperation
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writefileoperation_processopen'
+                  class="">
+                  writeFileOperation._processOpen
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writefileoperation_processwrite'
+                  class="">
+                  writeFileOperation._processWrite
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writefileoperation_processclose'
+                  class="">
+                  writeFileOperation._processClose
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writefileoperationsummary'
+                  class="">
+                  writeFileOperation.summary
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writestreamprocessor'
+                  class="">
+                  WriteStreamProcessor
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writestreamprocessorprocess'
+                  class="">
+                  writeStreamProcessor.process
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writestreamprocessor_separteintogroups'
+                  class="">
+                  writeStreamProcessor._separteIntoGroups
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writestreamprocessoroperationsteps'
+                  class="">
+                  WriteStreamProcessor.operationSteps
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writestreamprocessoroperationnull'
+                  class="">
+                  WriteStreamProcessor.operation.null
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writestreamoperation'
+                  class="">
+                  WriteStreamOperation
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writestreamoperation_processopen'
+                  class="">
+                  writeStreamOperation._processOpen
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writestreamoperation_processtick'
+                  class="">
+                  writeStreamOperation._processTick
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writestreamoperation_processwrite'
+                  class="">
+                  writeStreamOperation._processwrite
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#writestreamoperation_processclose'
+                  class="">
+                  writeStreamOperation._processClose
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div class='fix-margin-3'>
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='processfilesystem'>
+      processFileSystem
+    </h3>
+    
+    
+  </div>
+  
+
+  
+
+  <div class='pre p1 fill-light mt0'>processFileSystem</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>$0</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$0.activities</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>
+                  </td>
+                  <td class='break-word'><span>a map of async activities hashed by id
+</span></td>
+                </tr>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$0.includeActivities</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?</code>
+                  
+                    (default <code>false</code>)
+                  </td>
+                  <td class='break-word'><span>if 
+<code>true</code>
+ the actual activities are appended to the output
+</span></td>
+                </tr>
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readfileprocessor'>
+      ReadFileProcessor
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Instantiates an fs.readFile data processor to process data collected via
+<a href="https://github.com/nodesource/ah-fs">nodesource/ah-fs</a></p>
+
+
+  <div class='pre p1 fill-light mt0'>new ReadFileProcessor($0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, includeActivities: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>$0</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>includeActivities</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?
+            = <code>false</code>)</code>
+	    if 
+<code>true</code>
+ the actual activities are appended to the output
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readfileprocessorprocess'>
+      readFileProcessor.process
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Processes the supplied async activities and splits them into
+groups, and operations each representing a file read <code>fs.readFile</code>.</p>
+<h2>Groups</h2>
+<p>The returned value has a <code>groups</code> property which just lists the ids
+of async resources that were grouped together to form an operation
+indexed by the id of the <code>open</code> resource.
+Thus the <code>groups</code> is a map of sets.
+If no file read was encountered the groups are empty.</p>
+<h2>Operations</h2>
+<p>Additionally an <code>operations</code> property is included as well. Each operation
+represents one full <code>fs.readFile</code> execution. There will be one operation per
+group and they are indexed by the corresponding open resource <code>id</code> as well.</p>
+<p>An <code>operation</code> has the following properties:</p>
+<h3><code>fs.readFile</code> specific Operation Properties</h3>
+<p> Data about the async resources that were part of the operation, by default
+only <code>id</code> and <code>triggerId</code> are included:</p>
+<ul>
+<li><strong>open</strong>: contains data about opening the file</li>
+<li><strong>stat</strong>: contains data about getting file stats</li>
+<li><strong>read</strong>: contains data about reading the file</li>
+<li><strong>close</strong>: contains data about closing the file</li>
+</ul>
+<h3>General Operation Properties</h3>
+<p>The information below is the same for all <code>operation</code>s and thus is only
+mentioned here and linked from the documentation of all other processors.</p>
+<p> Data about the lifetime of the operation:</p>
+<ul>
+<li>
+<p><strong>lifeCycle</strong>: contains three timestamps that detail when an operation was created,
+for how long it was alive and when it was destroyed.</p>
+<ul>
+<li><strong>created</strong>: the timestamp when the first resource of the operation was created</li>
+<li><strong>destroyed</strong>: the timestamp when the last resource of the operation was destroyed</li>
+<li><strong>timeAlive</strong>: the difference between the <code>destroyed</code> and <code>created</code> timestamps, i.e.
+how long the operation's resources were alive</li>
+</ul>
+<p>Each timestamp has the following two properties provided by <a href="#utilsprettyns">utils.prettyNs</a>.</p>
+<ul>
+<li><strong>ns</strong>: time in nanoseconds {Number}</li>
+<li><strong>ms</strong>: pretty printed time in milliseconds {String}</li>
+</ul>
+</li>
+</ul>
+<p>Data that links to user code that is responsible for the operation occurring.</p>
+<ul>
+<li>
+<p><strong>createdAt</strong>: provides the line of code that called <code>fs.readFile</code></p>
+</li>
+<li>
+<p><strong>userFunctions</strong>: depending on the settings (see constructor docs) each resource
+will include it's own array of userFunctions or they are separated out into
+one property with duplicates merged. The latter is the default behavior.
+In either case <code>userFunctions</code> is an Array of Objects with the following properties:</p>
+<ul>
+<li><strong>name</strong>: the function name</li>
+<li><strong>inferredName</strong>: the inferred function name, only needed if the <code>name</code> is not set</li>
+<li><strong>file</strong>: the file in which the function was defined</li>
+<li><strong>line</strong>: the line on which the functino was defined in that file</li>
+<li><strong>column</strong>: the column on which the functino was defined in that file</li>
+<li><strong>location</strong>: the file and line + column where the function was defined combined into a string</li>
+<li><strong>args</strong>: the <code>err</code> and information about the <code>res</code> of the operation
+with which the function was invoked</li>
+<li><strong>propertyPaths</strong>: the object paths at which the function was found, these could be multiple
+since the function could've been attached to multiple resources (only available if the functions
+were separated from the resources and merged)</li>
+<li><strong>propertyPath</strong>: the object path at which the function was found (only available if the
+functions weren't separated and thus are still part of each resource)</li>
+</ul>
+</li>
+</ul>
+<h2>Sample Return Value</h2>
+<p>The sample return value was created with default options.</p>
+<pre class='hljs'>{ <span class="hljs-attr">groups</span>: <span class="hljs-built_in">Map</span> { <span class="hljs-number">10</span> =&gt; <span class="hljs-built_in">Set</span> { <span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span> } },
+  <span class="hljs-attr">operations</span>:
+    <span class="hljs-built_in">Map</span> {
+      <span class="hljs-number">10</span> =&gt; { <span class="hljs-attr">lifeCycle</span>:
+        { <span class="hljs-attr">created</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'44.12ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">44119000</span> },
+          <span class="hljs-attr">destroyed</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'85.95ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">85955000</span> },
+          <span class="hljs-attr">timeAlive</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'41.84ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">41836000</span> } },
+      <span class="hljs-attr">createdAt</span>: <span class="hljs-string">'at Test.&lt;anonymous&gt; (/Volumes/d/dev/js/async-hooks/ah-fs/test/read-one-file.js:36:6)'</span>,
+      <span class="hljs-attr">open</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">triggerId</span>: <span class="hljs-number">1</span> },
+      <span class="hljs-attr">stat</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">triggerId</span>: <span class="hljs-number">10</span> },
+      <span class="hljs-attr">read</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">12</span>, <span class="hljs-attr">triggerId</span>: <span class="hljs-number">11</span> },
+      <span class="hljs-attr">close</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">13</span>, <span class="hljs-attr">triggerId</span>: <span class="hljs-number">12</span> },
+      <span class="hljs-attr">userFunctions</span>:
+        [ { <span class="hljs-attr">file</span>: <span class="hljs-string">'/Volumes/d/dev/js/async-hooks/ah-fs/test/read-one-file.js'</span>,
+            <span class="hljs-attr">line</span>: <span class="hljs-number">39</span>,
+            <span class="hljs-attr">column</span>: <span class="hljs-number">17</span>,
+            <span class="hljs-attr">inferredName</span>: <span class="hljs-string">''</span>,
+            <span class="hljs-attr">name</span>: <span class="hljs-string">'onread'</span>,
+            <span class="hljs-attr">location</span>: <span class="hljs-string">'onread (/Volumes/d/dev/js/async-hooks/ah-fs/test/read-one-file.js:39:17)'</span>,
+            <span class="hljs-attr">args</span>:
+            { <span class="hljs-string">'0'</span>: <span class="hljs-literal">null</span>,
+              <span class="hljs-string">'1'</span>:
+                { <span class="hljs-attr">type</span>: <span class="hljs-string">'Buffer'</span>,
+                  <span class="hljs-attr">len</span>: <span class="hljs-number">6108</span>,
+                  <span class="hljs-attr">included</span>: <span class="hljs-number">18</span>,
+                  <span class="hljs-attr">val</span>:
+                  { <span class="hljs-attr">utf8</span>: <span class="hljs-string">'const test = requi'</span>,
+                    <span class="hljs-attr">hex</span>: <span class="hljs-string">'636f6e73742074657374203d207265717569'</span> } },
+              <span class="hljs-attr">proto</span>: <span class="hljs-string">'Object'</span> },
+            <span class="hljs-attr">propertyPaths</span>:
+            [ <span class="hljs-string">'open.resource.context.callback'</span>,
+              <span class="hljs-string">'stat.resource.context.callback'</span>,
+              <span class="hljs-string">'read.resource.context.callback'</span>,
+              <span class="hljs-string">'close.resource.context.callback'</span> ] } ] } } }</pre>
+
+
+  <div class='pre p1 fill-light mt0'>readFileProcessor.process</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        information about 
+<code>fs.readFile</code>
+ operations with the
+structure outlined above
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readfileprocessoroperationsteps'>
+      ReadFileProcessor.operationSteps
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The minimum number of steps, represented as an async resource each,
+involved to execute <code>fs.readFile</code>.</p>
+<p>This can be used by higher level processors to group
+activities looking for larger operations first and then
+operations involving less steps.</p>
+<p>Steps are: open, stat, read+, close</p>
+
+
+  <div class='pre p1 fill-light mt0'>ReadFileProcessor.operationSteps</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readfileprocessoroperation'>
+      ReadFileProcessor.operation
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Description of the operation: 'fs.readFile'.</p>
+
+
+  <div class='pre p1 fill-light mt0'>ReadFileProcessor.operation</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readfileoperation'>
+      ReadFileOperation
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Processes a group of async activities that represent a fs read stream operation.
+It is used by the <a href="#readfileprocessor">ReadFileProcessor</a> as part of <code>process</code>.</p>
+<p>Four operation steps are derived from the group, each providing some information
+about the operation in question.</p>
+<p>Each step is processed into an operation in the corresponding private method, i.e. <code>_processOpen</code>.
+These methods are documented below for information's sake, they should not be called directly,
+nor should you have a need to directly instantiate a <code>ReadFileOperation</code> in the first place.</p>
+
+
+  <div class='pre p1 fill-light mt0'>new ReadFileOperation(group: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>>, includeActivities: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>group</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>>)</code>
+	    the ids of the activities that were part of the operation
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>includeActivities</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?
+            = <code>false</code>)</code>
+	    if 
+<code>true</code>
+ the activities are attached to
+each operation step
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readfileoperation_processopen'>
+      readFileOperation._processOpen
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The open resource tells us where in user code the <code>fs.readFile</code> originated
+via the second frame of the stack trace, as well as when the operation
+was created.</p>
+<p>Additionally it has the same user functions attached as all the other resources.</p>
+
+
+  <div class='pre p1 fill-light mt0'>readFileOperation._processOpen(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the open step, pre-processed by the 
+<code>ReadFileProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readfileoperation_processstat'>
+      readFileOperation._processStat
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The stat resource gives us no interesting information.
+Therefore we just capture the <code>id</code>, <code>triggerId</code> and <code>userFunctions</code> and if so desired
+attach the activities.</p>
+
+
+  <div class='pre p1 fill-light mt0'>readFileOperation._processStat(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the open step, pre-processed by the 
+<code>ReadFileProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readfileoperation_processread'>
+      readFileOperation._processRead
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The read resource gives us no interesting information.
+Therefore we just capture the <code>id</code>, <code>triggerId</code> and <code>userFunctions</code> and if so desired
+attach the activities.</p>
+
+
+  <div class='pre p1 fill-light mt0'>readFileOperation._processRead(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the read step, pre-processed by the 
+<code>ReadFileProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readfileoperation_processclose'>
+      readFileOperation._processClose
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The main information we pull from the close resource is the <code>destroy</code> timestamp.</p>
+<p>Combined with the <code>init</code> timestamp of the open resource it allows us to deduce how long
+the file read took.</p>
+
+
+  <div class='pre p1 fill-light mt0'>readFileOperation._processClose(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the close step, pre-processed by the 
+<code>ReadFileProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readfileoperationsummary'>
+      readFileOperation.summary
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns the summary of processing the group into an operation.</p>
+<p>The summary of all operations has a very similar structure, but includes some properties that are specific to this
+particular operation.</p>
+<p>The general properties <code>lifeCycle</code> and <code>createdAt</code> are documented as part of
+the <code>ReadFileProcessor</code>.
+Therefore learn more <a href="#general-operation-properties">here</a>.</p>
+<h2>Properties Specific to <code>fs.readFile</code></h2>
+<ul>
+<li><strong>open</strong>: see <code>readFileOperation._processOpen</code></li>
+<li><strong>stat</strong>: see <code>readFileOperation._processStat</code></li>
+<li><strong>read</strong>: see <code>readFileOperation._processRead</code></li>
+<li><strong>close</strong>: see <code>readFileOperation._processClose</code></li>
+</ul>
+
+
+  <div class='pre p1 fill-light mt0'>readFileOperation.summary($0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>$0</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    options
+
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$0.separateFunctions</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?</code>
+                  
+                    (default <code>true</code>)
+                  </td>
+                  <td class='break-word'><span>when 
+<code>true</code>
+ the user functions are separated out
+from the specific operations and attached as a 
+<code>userFunctions</code>
+ array directly to the returned
+result
+</span></td>
+                </tr>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$0.mergeFunctions</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?</code>
+                  
+                    (default <code>true</code>)
+                  </td>
+                  <td class='break-word'><span>if 
+<code>true</code>
+ when a duplicate function is found in the
+separated functions Array, they are merged into one while preserving all information
+from both version. Note that this setting only activates if 
+<code>separateFunctions</code>
+ is 
+<code>true</code>
+ as well.
+</span></td>
+                </tr>
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        all important information about the current operation
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readstreamprocessor'>
+      ReadStreamProcessor
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Instantiates an fs.createReadStream data processor to process data collected via
+<a href="https://github.com/nodesource/ah-fs">nodesource/ah-fs</a></p>
+
+
+  <div class='pre p1 fill-light mt0'>new ReadStreamProcessor($0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, includeActivities: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>$0</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>includeActivities</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?
+            = <code>false</code>)</code>
+	    if 
+<code>true</code>
+ the actual activities are appended to the output
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readstreamprocessorprocess'>
+      readStreamProcessor.process
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Processes the supplied async activities and splits them into
+groups, and operations each representing a file read stream <code>fs.createReadStream</code>.</p>
+<h2>Groups</h2>
+<p>The returned value has a <code>groups</code> property which just lists the ids
+of async resources that were grouped together to form an operation
+indexed by the <code>fd</code> on which the readFile operated.
+Thus the <code>groups</code> is a map of sets.
+If no file read stream was encountered the groups are empty.</p>
+<h2>Operations</h2>
+<p>Additionally an <code>operations</code> property is included as well. Each operation
+represents one full <code>fs.createReadStream</code> execution. There will be one operation per
+group and they are indexed by the corresponding <code>fd</code> as well.</p>
+<p>An <code>operation</code> has the following properties:</p>
+<h3><code>fs.createReadStream</code> specific Operation Properties</h3>
+<p> Data about the async resources that were part of the operation, by default
+only <code>id</code> and <code>triggerId</code> are included:</p>
+<ul>
+<li><strong>open</strong>: contains data about opening the file</li>
+<li><strong>stream</strong>: contains data about how the stream was configured, including readable state and
+the path to the file being read, pipes count, encoding, etc.</li>
+<li><strong>reads</strong>: an Array of reads, each containing data about reading a chunk from the file including
+the time spent to complete reading the particular chunk</li>
+<li><strong>close</strong>: contains data about closing the file</li>
+</ul>
+<h3>General Operation Properties</h3>
+<ul>
+<li><a href="https://nodesource.github.io/ah-fs.processor/#general-operation-properties">see ReadFileProcessor.process</a></li>
+</ul>
+<h2>Sample Return Value</h2>
+<p>The sample return value was created with default options.</p>
+<pre class='hljs'>{ <span class="hljs-attr">groups</span>: <span class="hljs-built_in">Map</span> { <span class="hljs-number">10</span> =&gt; <span class="hljs-built_in">Set</span> { <span class="hljs-number">10</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>, <span class="hljs-number">14</span>, <span class="hljs-number">16</span> } },
+  <span class="hljs-attr">operations</span>:
+  <span class="hljs-built_in">Map</span> {
+    <span class="hljs-number">10</span> =&gt; { <span class="hljs-attr">lifeCycle</span>:
+      { <span class="hljs-attr">created</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'1.60ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">1600000</span> },
+        <span class="hljs-attr">destroyed</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'14.33ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">14329000</span> },
+        <span class="hljs-attr">timeAlive</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'12.73ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">12729000</span> } },
+    <span class="hljs-attr">createdAt</span>: <span class="hljs-string">'at Test.&lt;anonymous&gt; (/Volumes/d/dev/js/async-hooks/ah-fs/test/readstream-one-file.js:94:6)'</span>,
+    <span class="hljs-attr">open</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">triggerId</span>: <span class="hljs-number">3</span> },
+    <span class="hljs-attr">stream</span>:
+      { <span class="hljs-attr">id</span>: <span class="hljs-number">14</span>,
+        <span class="hljs-attr">triggerId</span>: <span class="hljs-number">12</span>,
+        <span class="hljs-attr">path</span>: <span class="hljs-string">'/Volumes/d/dev/js/async-hooks/ah-fs/test/readstream-one-file.js'</span>,
+        <span class="hljs-attr">flags</span>: <span class="hljs-string">'r'</span>,
+        <span class="hljs-attr">fd</span>: <span class="hljs-number">19</span>,
+        <span class="hljs-attr">objectMode</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">highWaterMark</span>: <span class="hljs-number">65536</span>,
+        <span class="hljs-attr">pipesCount</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">defaultEncoding</span>: <span class="hljs-string">'utf8'</span>,
+        <span class="hljs-attr">encoding</span>: <span class="hljs-literal">null</span> },
+    <span class="hljs-attr">reads</span>:
+      [ { <span class="hljs-attr">id</span>: <span class="hljs-number">12</span>,
+          <span class="hljs-attr">triggerId</span>: <span class="hljs-number">10</span>,
+          <span class="hljs-attr">timeSpent</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'0.83ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">830000</span> } },
+        { <span class="hljs-attr">id</span>: <span class="hljs-number">13</span>,
+          <span class="hljs-attr">triggerId</span>: <span class="hljs-number">12</span>,
+          <span class="hljs-attr">timeSpent</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'0.24ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">240000</span> } } ],
+    <span class="hljs-attr">close</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">16</span>, <span class="hljs-attr">triggerId</span>: <span class="hljs-number">13</span> },
+    <span class="hljs-attr">userFunctions</span>:
+      [ { <span class="hljs-attr">file</span>: <span class="hljs-string">'/Volumes/d/dev/js/async-hooks/ah-fs/test/readstream-one-file.js'</span>,
+          <span class="hljs-attr">line</span>: <span class="hljs-number">99</span>,
+          <span class="hljs-attr">column</span>: <span class="hljs-number">16</span>,
+          <span class="hljs-attr">inferredName</span>: <span class="hljs-string">''</span>,
+          <span class="hljs-attr">name</span>: <span class="hljs-string">'onend'</span>,
+          <span class="hljs-attr">location</span>: <span class="hljs-string">'onend (/Volumes/d/dev/js/async-hooks/ah-fs/test/readstream-one-file.js:99:16)'</span>,
+          <span class="hljs-attr">args</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">propertyPaths</span>: [ <span class="hljs-string">'stream.resource.args[0]._events.end[1]'</span> ] },
+        { <span class="hljs-attr">file</span>: <span class="hljs-string">'/Volumes/d/dev/js/async-hooks/ah-fs/test/readstream-one-file.js'</span>,
+          <span class="hljs-attr">line</span>: <span class="hljs-number">98</span>,
+          <span class="hljs-attr">column</span>: <span class="hljs-number">17</span>,
+          <span class="hljs-attr">inferredName</span>: <span class="hljs-string">''</span>,
+          <span class="hljs-attr">name</span>: <span class="hljs-string">'ondata'</span>,
+          <span class="hljs-attr">location</span>: <span class="hljs-string">'ondata (/Volumes/d/dev/js/async-hooks/ah-fs/test/readstream-one-file.js:98:17)'</span>,
+          <span class="hljs-attr">args</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">propertyPaths</span>: [ <span class="hljs-string">'stream.resource.args[0]._events.data'</span> ] } ] } } }</pre>
+
+
+  <div class='pre p1 fill-light mt0'>readStreamProcessor.process</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        information about 
+<code>fs.createReadStream</code>
+ operations with the
+structure outlined above
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readstreamprocessoroperationsteps'>
+      ReadStreamProcessor.operationSteps
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The minimum number of steps, represented as an async resource each,
+involved to execute <code>fs.createReadStream</code>.</p>
+<p>This can be used by higher level processors to group
+activities looking for larger operations first and then
+operations involving less steps.</p>
+<p>Steps are: open, stream+, read+, close</p>
+
+
+  <div class='pre p1 fill-light mt0'>ReadStreamProcessor.operationSteps</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readstreamprocessoroperationnull'>
+      ReadStreamProcessor.operation.null
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Description of the operation: 'fs.createReadStream'.</p>
+
+
+  <div class='pre p1 fill-light mt0'>ReadStreamProcessor.operation.null</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readstreamoperation'>
+      ReadStreamOperation
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Processes a group of async activities that represent a fs read stream operation.
+It is used by the <a href="#readstreamprocessor">ReadStreamProcessor</a> as part of <code>process</code>.</p>
+<p>Four operation steps are derived from the group, each providing some information
+about the operation in question.</p>
+<p>Each step is processed into an operation in the corresponding private method, i.e. <code>_processOpen</code>.
+These methods are documented below for information's sake, they should not be called directly,
+nor should you have a need to directly instantiate a <code>ReadStreamOperation</code> in the first place.</p>
+
+
+  <div class='pre p1 fill-light mt0'>new ReadStreamOperation(group: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>>, includeActivities: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>group</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>>)</code>
+	    the ids of the activities that were part of the operation
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>includeActivities</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?
+            = <code>false</code>)</code>
+	    if 
+<code>true</code>
+ the activities are attached to
+each operation step
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readstreamoperation_processopen'>
+      readStreamOperation._processOpen
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>An open doesn't have too much info, but we can glean two very important
+data points:</p>
+<ol>
+<li>the init timestamp tells us when the stream was created</li>
+<li>the last frame of the init stack tells us where <code>createReadStream</code> was called.</li>
+</ol>
+
+
+  <div class='pre p1 fill-light mt0'>readStreamOperation._processOpen(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the open step, pre-processed by the 
+<code>ReadStreamProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readstreamoperation_processtick'>
+      readStreamOperation._processTick
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The ReadStream Tick gives us a lot of information. It has an args array with
+the ReadStream and its ReadableState respectively</p>
+<p>The ReadStream provides us the following:</p>
+<ol>
+<li>the path to the file we are streaming</li>
+<li>the flags with which the file was opened</li>
+<li>the fd (assuming we are dealing with the tick triggered indirectly by the open)</li>
+</ol>
+<p>All callbacks on the _events of the ReadStream have been removed, but are present
+inside the functions object (see below).</p>
+<p>The ReadableState provides us the following:</p>
+<ol>
+<li>objectMode <code>true|false</code></li>
+<li>highWaterMark</li>
+<li>pipesCount</li>
+<li>defaultEncoding, i.e. utf8</li>
+<li>encoding, i.e. utf8</li>
+</ol>
+<p>The information extracted from the tick is attached to a <code>stream</code> property
+provided with the <code>summary</code>.</p>
+
+
+  <div class='pre p1 fill-light mt0'>readStreamOperation._processTick(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the tick step, pre-processed by the 
+<code>ReadStreamProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readstreamoperation_processread'>
+      readStreamOperation._processRead
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The read resource doesn't give us too much information.</p>
+<p>The stack traces originate in core and we don't see any registred
+user callbacks, as those are present on the stream instead.
+However we can count the amount of reads that occurred and deduce how
+long each read took from the <code>before</code> and <code>after</code> timestamps.</p>
+
+
+  <div class='pre p1 fill-light mt0'>readStreamOperation._processRead(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the read step, pre-processed by the 
+<code>ReadStreamProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readstreamoperation_processclose'>
+      readStreamOperation._processClose
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The main information we pull from the close resource is the <code>destroy</code> timestamp.</p>
+<p>Combined with the <code>init</code> timestamp of the open resource it allows us to deduce how long
+the read stream was active.</p>
+
+
+  <div class='pre p1 fill-light mt0'>readStreamOperation._processClose(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the close step, pre-processed by the 
+<code>ReadStreamProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='readstreamoperationsummary'>
+      readStreamOperation.summary
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns the summary of processing the group into an operation.</p>
+<p>The summary of all operations has a very similar structure, but includes some properties that are specific to this
+particular operation.</p>
+<p>The general properties <code>lifeCycle</code> and <code>createdAt</code> are documented as part of
+the <code>ReadFileProcessor</code>.
+Therefore learn more <a href="#general-operation-properties">here</a>.</p>
+<h2>Properties Specific to <code>fs.createReadStream</code></h2>
+<ul>
+<li><strong>open</strong>: see <code>readStreamOperation._processOpen</code></li>
+<li><strong>stream</strong>: see <code>readStreamOperation._processTick</code></li>
+<li><strong>read</strong>: see <code>readStreamOperation._processRead</code></li>
+<li><strong>close</strong>: see <code>readStreamOperation._processClose</code></li>
+</ul>
+
+
+  <div class='pre p1 fill-light mt0'>readStreamOperation.summary($0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>$0</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    options
+
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$0.separateFunctions</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?</code>
+                  
+                    (default <code>true</code>)
+                  </td>
+                  <td class='break-word'><span>when 
+<code>true</code>
+ the user functions are separated out
+from the specific operations and attached as a 
+<code>userFunctions</code>
+ array directly to the returned
+result
+</span></td>
+                </tr>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$0.mergeFunctions</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?</code>
+                  
+                    (default <code>true</code>)
+                  </td>
+                  <td class='break-word'><span>if 
+<code>true</code>
+ when a duplicate function is found in the
+separated functions Array, they are merged into one while preserving all information
+from both version. Note that this setting only activates if 
+<code>separateFunctions</code>
+ is 
+<code>true</code>
+ as well.
+</span></td>
+                </tr>
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        all important information about the current operation
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='openinitframe0rx'>
+      openInitFrame0Rx
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Sample initStack of writeFile open, calles as first operation of <code>fs.writeFile</code>.
+In order to be sure this is a writeFile open we need to check the two topmost frames.</p>
+<p>"at Object.fs.open (fs.js:581:11)",
+"at Object.fs.writeFile (fs.js:1155:6)",
+"at Test.<anonymous> (/Volumes/d/dev/js/async-hooks/ah-fs/test/write-one-file.js:28:6)",</p>
+<p>Code at fs.js:581:</p>
+<p><code>binding.open(pathModule._makeLong(path), ...</code></p>
+<p>Code at fs.js:1155:</p>
+<p><code>fs.open(path, flag, options.mode, function(openErr, fd) ...</code></p>
+<p>Bottom frame has info about where the call <code>fs.writeFile</code> originated.</p>
+
+
+  <div class='pre p1 fill-light mt0'>openInitFrame0Rx</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writeinitframe0rx'>
+      writeInitFrame0Rx
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Sample init stack of writeFile write, called afer <code>fs.open</code> completes:</p>
+<p>"at Object.fs.write (fs.js:643:20)",
+"at writeAll (fs.js:1117:6)",
+"at writeFd (fs.js:1168:5)",
+"at fs.js:1159:7",
+"at FSReqWrap.oncomplete (fs.js:117:15)"</p>
+<p>Code at fs.js:643:</p>
+<p><code>binding.writeBuffer(fd, buffer, offset, length, position, req);</code></p>
+
+
+  <div class='pre p1 fill-light mt0'>writeInitFrame0Rx</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='closeinitframe0rx'>
+      closeInitFrame0Rx
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Sample initStack of writeFile close, called after last <code>fs.write</code> completes:</p>
+<p>"at Object.fs.close (fs.js:555:11)",
+"at fs.js:1131:14",
+"at FSReqWrap.wrapper <a href="fs.js:626:5">as oncomplete</a>"</p>
+<p>Code at fs.js:555:</p>
+<p><code>binding.close(fd, req);</code></p>
+
+
+  <div class='pre p1 fill-light mt0'>closeInitFrame0Rx</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writefileprocessor'>
+      WriteFileProcessor
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Instantiates an fs.writeFile data processor to process data collected via
+<a href="https://github.com/nodesource/ah-fs">nodesource/ah-fs</a></p>
+
+
+  <div class='pre p1 fill-light mt0'>new WriteFileProcessor($0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, includeActivities: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>$0</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>includeActivities</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?
+            = <code>false</code>)</code>
+	    if 
+<code>true</code>
+ the actual activities are appended to the output
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writefileprocessorprocess'>
+      writeFileProcessor.process
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Processes the supplied async activities and splits them into
+groups, and operations each representing a file read stream <code>fs.createWriteFile</code>.</p>
+<h2>Groups</h2>
+<p>The returned value has a <code>groups</code> property which just lists the ids
+of async resources that were grouped together to form an operation
+indexed by the id of the <code>fs.open</code> activity that was part of the <code>fs.writeFile</code>.
+Thus the <code>groups</code> is a map of sets.
+If no file write file was encountered the groups are empty.</p>
+<h2>Operations</h2>
+<p>Additionally an <code>operations</code> property is included as well. Each operation
+represents one full <code>fs.writeFile</code> execution. There will be one operation per
+group and they are indexed by the corresponding open id as well.</p>
+<p>An <code>operation</code> has the following properties:</p>
+<h3><code>fs.createWriteFile</code> specific Operation Properties</h3>
+<p> Data about the async resources that were part of the operation, by default
+only <code>id</code> and <code>triggerId</code> are included:</p>
+<ul>
+<li><strong>open</strong>: contains data about opening the file</li>
+<li><strong>writes</strong>: an Array of writes, each containing data about writing a
+chunk from the file including the time spent to complete writing the
+particular chunk</li>
+<li><strong>close</strong>: contains data about closing the file</li>
+</ul>
+<h3>General Operation Properties</h3>
+<ul>
+<li><a href="https://nodesource.github.io/ah-fs.processor/#general-operation-properties">see ReadFileProcessor.process</a></li>
+</ul>
+<h2>Sample Return Value</h2>
+<p>The sample return value was created with default options.</p>
+<pre class='hljs'>{ <span class="hljs-attr">groups</span>: <span class="hljs-built_in">Map</span> { <span class="hljs-number">10</span> =&gt; <span class="hljs-built_in">Set</span> { <span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span> } },
+  <span class="hljs-attr">operations</span>:
+  <span class="hljs-built_in">Map</span> {
+    <span class="hljs-number">10</span> =&gt; { <span class="hljs-attr">lifeCycle</span>:
+      { <span class="hljs-attr">created</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'24.49ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">24491000</span> },
+        <span class="hljs-attr">destroyed</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'33.96ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">33964000</span> },
+        <span class="hljs-attr">timeAlive</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'9.47ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">9473000</span> } },
+    <span class="hljs-attr">createdAt</span>: <span class="hljs-string">'at Test.&lt;anonymous&gt; (/Volumes/d/dev/js/async-hooks/ah-fs/test/write-one-file.js:28:6)'</span>,
+    <span class="hljs-attr">open</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">triggerId</span>: <span class="hljs-number">1</span> },
+    <span class="hljs-attr">write</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">triggerId</span>: <span class="hljs-number">10</span> },
+    <span class="hljs-attr">close</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">12</span>, <span class="hljs-attr">triggerId</span>: <span class="hljs-number">11</span> } } } }</pre>
+
+
+  <div class='pre p1 fill-light mt0'>writeFileProcessor.process</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        information about 
+<code>fs.createWriteFile</code>
+ operations with the
+structure outlined above
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writefileprocessoroperationsteps'>
+      WriteFileProcessor.operationSteps
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The minimum number of steps, represented as an async resource each,
+involved to execute <code>fs.writeFile</code>.</p>
+<p>This can be used by higher level processors to group
+activities looking for larger operations first and then
+operations involving less steps.</p>
+<p>Steps are: open, write+, close</p>
+
+
+  <div class='pre p1 fill-light mt0'>WriteFileProcessor.operationSteps</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writefileprocessoroperationnull'>
+      WriteFileProcessor.operation.null
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Description of the operation: 'fs.writeFile'.</p>
+
+
+  <div class='pre p1 fill-light mt0'>WriteFileProcessor.operation.null</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writefileoperation'>
+      WriteFileOperation
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Processes a group of async activities that represent a fs write file operation.
+It is used by the <a href="#WriteFileProcessor">WriteFileProcessor</a> as part of <code>process</code>.</p>
+<p>Three operation steps are derived from the group, each providing some information
+about the operation in question.</p>
+<p>Each step is processed into an operation in the corresponding private method, i.e. <code>_processOpen</code>.
+These methods are documented below for information's sake, they should not be called directly,
+nor should you have a need to directly instantiate a <code>WriteFileOperation</code> in the first place.</p>
+
+
+  <div class='pre p1 fill-light mt0'>new WriteFileOperation(group: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>>, includeActivities: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>group</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>>)</code>
+	    the ids of the activities that were part of the operation
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>includeActivities</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?
+            = <code>false</code>)</code>
+	    if 
+<code>true</code>
+ the activities are attached to
+each operation step
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writefileoperation_processopen'>
+      writeFileOperation._processOpen
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The open resource tells us where in user code the <code>fs.writeFile</code> originated
+via the second frame of the stack trace, as well as when the operation
+was created.</p>
+
+
+  <div class='pre p1 fill-light mt0'>writeFileOperation._processOpen(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the open step, pre-processed by the 
+<code>WriteFileProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writefileoperation_processwrite'>
+      writeFileOperation._processWrite
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The write resource gives us no interesting information.
+Therefore we just capture the <code>id</code>, <code>triggerId</code> and if so desired
+attach the activities.</p>
+
+
+  <div class='pre p1 fill-light mt0'>writeFileOperation._processWrite(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the write step, pre-processed by the 
+<code>WriteFileProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writefileoperation_processclose'>
+      writeFileOperation._processClose
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The main information we pull from the close resource is the <code>destroy</code> timestamp.</p>
+<p>Combined with the <code>init</code> timestamp of the open resource it allows us to deduce how long
+the file write took.</p>
+
+
+  <div class='pre p1 fill-light mt0'>writeFileOperation._processClose(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the close step, pre-processed by the 
+<code>WriteFileProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writefileoperationsummary'>
+      writeFileOperation.summary
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns the summary of processing the group into an operation.</p>
+<p>The summary of all operations has a very similar structure, but includes some properties that are specific to this
+particular operation.</p>
+<p>The general properties <code>lifeCycle</code> and <code>createdAt</code> are documented as part of
+the <code>WriteFileProcessor</code>.
+Therefore learn more <a href="#general-operation-properties">here</a>.</p>
+<h2>Properties Specific to <code>fs.writeFile</code></h2>
+<ul>
+<li><strong>open</strong>: see <code>writeFileOperation._processOpen</code></li>
+<li><strong>write</strong>: see <code>writeFileOperation._processWrite</code></li>
+<li><strong>close</strong>: see <code>writeFileOperation._processClose</code></li>
+</ul>
+<p>Note this summary function takes no parameters (like the other Operations) since
+we don't find any user functions related to the write file operation and thus
+have nothing to process.</p>
+
+
+  <div class='pre p1 fill-light mt0'>writeFileOperation.summary(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        all important information about the current operation
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writestreamprocessor'>
+      WriteStreamProcessor
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Instantiates an fs.createWriteStream data processor to process data collected via
+<a href="https://github.com/nodesource/ah-fs">nodesource/ah-fs</a></p>
+
+
+  <div class='pre p1 fill-light mt0'>new WriteStreamProcessor($0: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>$0</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$0.includeActivities</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?</code>
+                  
+                    (default <code>false</code>)
+                  </td>
+                  <td class='break-word'><span>if 
+<code>true</code>
+ the actual activities are appended to the output
+</span></td>
+                </tr>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$0.separateFunctions</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?</code>
+                  
+                    (default <code>true</code>)
+                  </td>
+                  <td class='break-word'><span>when 
+<code>true</code>
+ the user functions are separated out
+from the specific resources and attached as a 
+<code>userFunctions</code>
+ array directly to the returned
+operations
+</span></td>
+                </tr>
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writestreamprocessorprocess'>
+      writeStreamProcessor.process
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Processes the supplied async activities and splits them into
+groups, and operations each representing a file write stream <code>fs.createWriteStream</code>.</p>
+<h2>Groups</h2>
+<p>The returned value has a <code>groups</code> property which just lists the ids
+of async resources that were grouped together to form an operation
+indexed by the <code>fd</code> on which the writeFile operated.
+Thus the <code>groups</code> is a map of sets.
+If no file write stream was encountered the groups are empty.</p>
+<h2>Operations</h2>
+<p>Additionally an <code>operations</code> property is included as well. Each operation
+represents one full <code>fs.createWriteStream</code> execution. There will be one operation per
+group and they are indexed by the corresponding <code>fd</code> as well.</p>
+<p>An <code>operation</code> has the following properties:</p>
+<h3><code>fs.createWriteStream</code> specific Operation Properties</h3>
+<p> Data about the async resources that were part of the operation, by default
+only <code>id</code> and <code>triggerId</code> are included:</p>
+<ul>
+<li><strong>open</strong>: contains data about opening the file</li>
+<li><strong>stream</strong>: contains data about how the stream was configured, including writeable state and
+the path to the file being write, pipes count, encoding, etc.</li>
+<li><strong>writes</strong>: an Array of writes, each containing data about writing a chunk from the file including
+the time spent to complete writeing the particular chunk</li>
+<li><strong>close</strong>: contains data about closing the file</li>
+</ul>
+<h3>General Operation Properties</h3>
+<ul>
+<li><a href="https://nodesource.github.io/ah-fs.processor/#general-operation-properties">see ReadFileProcessor.process</a></li>
+</ul>
+<h2>Sample Return Value</h2>
+<p>The sample return value was created with default options.</p>
+<pre class='hljs'>{ <span class="hljs-attr">groups</span>: <span class="hljs-built_in">Map</span> { <span class="hljs-number">10</span> =&gt; <span class="hljs-built_in">Set</span> { <span class="hljs-number">14</span>, <span class="hljs-number">10</span>, <span class="hljs-number">16</span>, <span class="hljs-number">19</span> } },
+  <span class="hljs-attr">operations</span>:
+  <span class="hljs-built_in">Map</span> {
+    <span class="hljs-number">10</span> =&gt; { <span class="hljs-attr">lifeCycle</span>:
+      { <span class="hljs-attr">created</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'1.12ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">1123000</span> },
+        <span class="hljs-attr">destroyed</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'18.20ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">18205000</span> },
+        <span class="hljs-attr">timeAlive</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'17.08ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">17082000</span> } },
+    <span class="hljs-attr">createdAt</span>: <span class="hljs-string">'at Test.&lt;anonymous&gt; (/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js:29:26)'</span>,
+    <span class="hljs-attr">open</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">triggerId</span>: <span class="hljs-number">3</span> },
+    <span class="hljs-attr">stream</span>:
+      { <span class="hljs-attr">id</span>: <span class="hljs-number">16</span>,
+        <span class="hljs-attr">triggerId</span>: <span class="hljs-number">13</span>,
+        <span class="hljs-attr">path</span>: <span class="hljs-string">'/dev/null'</span>,
+        <span class="hljs-attr">flags</span>: <span class="hljs-string">'w'</span>,
+        <span class="hljs-attr">fd</span>: <span class="hljs-number">19</span>,
+        <span class="hljs-attr">mode</span>: <span class="hljs-number">438</span> },
+    <span class="hljs-attr">writes</span>:
+      [ { <span class="hljs-attr">id</span>: <span class="hljs-number">14</span>,
+          <span class="hljs-attr">triggerId</span>: <span class="hljs-number">13</span>,
+          <span class="hljs-attr">timeSpent</span>: { <span class="hljs-attr">ms</span>: <span class="hljs-string">'0.14ms'</span>, <span class="hljs-attr">ns</span>: <span class="hljs-number">139000</span> } } ],
+    <span class="hljs-attr">close</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">19</span>, <span class="hljs-attr">triggerId</span>: <span class="hljs-number">15</span> },
+    <span class="hljs-attr">userFunctions</span>:
+      [ { <span class="hljs-attr">file</span>: <span class="hljs-string">'/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js'</span>,
+          <span class="hljs-attr">line</span>: <span class="hljs-number">32</span>,
+          <span class="hljs-attr">column</span>: <span class="hljs-number">19</span>,
+          <span class="hljs-attr">inferredName</span>: <span class="hljs-string">''</span>,
+          <span class="hljs-attr">name</span>: <span class="hljs-string">'onfinish'</span>,
+          <span class="hljs-attr">location</span>: <span class="hljs-string">'onfinish (/Volumes/d/dev/js/async-hooks/ah-fs/test/read-stream-piped-into-write-stream.js:32:19)'</span>,
+          <span class="hljs-attr">args</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">propertyPaths</span>: [ <span class="hljs-string">'stream.resource.args[1].pipes._events.finish[1]'</span> ] } ] } } }</pre>
+
+
+  <div class='pre p1 fill-light mt0'>writeStreamProcessor.process</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        information about 
+<code>fs.createWriteStream</code>
+ operations with the
+structure outlined above
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writestreamprocessor_separteintogroups'>
+      writeStreamProcessor._separteIntoGroups
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Here we try our best to piece together the parts of a WriteStream,
+Open | Write+ | WriteStreamTick | Close.</p>
+<p>Since they aren't linked by a common file descriptor or similar we rely
+on async resource graph structure and the timestamps to take a best guess.</p>
+<p>We just don't have the data available to piece this together with 100% certainty.</p>
+<p>Below is a sample of collected async resources with all but types and ids removed.</p>
+<pre><code> { type: 'FSREQWRAP', id: 10, tid: 3 }   open, write stream triggered by root
+ { type: 'FSREQWRAP', id: 11, tid: 3 }   open, read stream triggered by root
+ { type: 'TickObject', id: 12, tid: 3 }  read stream tick, triggered by root
+ { type: 'FSREQWRAP', id: 13, tid: 11 }  read, triggerd by open of read steam
+ { type: 'FSREQWRAP', id: 14, tid: 13 }  write, triggerd by read of read steam
+ { type: 'FSREQWRAP', id: 15, tid: 13 }  read, next chunk, triggered by first read
+ { type: 'TickObject', id: 16, tid: 13 } stream tick, triggerd by first read
+ { type: 'FSREQWRAP', id: 18, tid: 15 }  close read stream, triggered by last read
+ { type: 'FSREQWRAP', id: 19, tid: 15 }  close write stream, triggered by last read
+</code></pre>
+<p>We reason about that data as follows in order to piece together the WriteStream.</p>
+<h2>Connecting WriteSteam Write to WriteStream Close</h2>
+<p>Write (id: 14) is triggered by read of read stream (id: 13).
+The same read triggers the last read (id: 15).
+That last read triggers the close of the write stream (id: 19).</p>
+<p>Therefore we can connect the write stream write to the write stream close since they
+have a common parent in their ancestry (the first read of the read stream).</p>
+<pre><code>           -- Read2:15 -- WriteStream:Close:19
+         /
+Read1:13
+         \
+           -- WriteStream:Write:14
+</code></pre>
+<p>However I would imagine that this breaks down once we have on read stream piped into multiple
+write streams as then the writes have the same Read parent.</p>
+<h2>Connecting WriteStream Open to WriteStream Write</h2>
+<p>There is no 100% way to get this right, but if we assume that the first write happens right after
+the opening of the write stream in the same context we can do the following.</p>
+<p>We already know that the common parent of WriteStream:Write and
+WriteStream:Close is Read1:13.
+Therefore we find all WriteStream:Opens that share a parent with Read1:13.
+The ones with the closest parent win.</p>
+<p>If we find more than one, we pick the one that was initialized closest to
+the WriteStream:Write timewise, assuming that we write to the stream
+immediately after opening it.</p>
+<pre><code>           -- ReadStream:Open:11 -- Read1:13 -- Read2:15 -- WriteStream:Close:19
+         /                                   \
+Parent:3                                       -- WriteStream:Write:14
+         \
+           -- WriteStream:Open:10
+</code></pre>
+
+
+  <div class='pre p1 fill-light mt0'>writeStreamProcessor._separteIntoGroups()</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writestreamprocessoroperationsteps'>
+      WriteStreamProcessor.operationSteps
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The minimum number of steps, represented as an async resource each,
+involved to execute <code>fs.createWriteStream</code>.</p>
+<p>This can be used by higher level processors to group
+activities looking for larger operations first and then
+operations involving less steps.</p>
+<p>Steps are: open, stream, write+, close</p>
+
+
+  <div class='pre p1 fill-light mt0'>WriteStreamProcessor.operationSteps</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writestreamprocessoroperationnull'>
+      WriteStreamProcessor.operation.null
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Description of the operation: 'fs.createWriteStream'.</p>
+
+
+  <div class='pre p1 fill-light mt0'>WriteStreamProcessor.operation.null</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writestreamoperation'>
+      WriteStreamOperation
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Processes a group of async activities that represent a fs write stream operation.
+It is used by the <a href="#writestreamprocessor">writeStreamProcessor</a> as part of <code>process</code>.</p>
+<p>Four operation steps are derived from the group, each providing some information
+about the operation in question.</p>
+<p>Each step is processed into an operation in the corresponding private method, i.e. <code>_processOpen</code>.
+These methods are documented below for information's sake, they should not be called directly,
+nor should you have a need to directly instantiate a <code>writeStreamOperation</code> in the first place.</p>
+
+
+  <div class='pre p1 fill-light mt0'>new WriteStreamOperation(group: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>>, includeActivities: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>group</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>>)</code>
+	    the ids of the activities that were part of the operation
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>includeActivities</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?
+            = <code>false</code>)</code>
+	    if 
+<code>true</code>
+ the activities are attached to
+each operation step
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writestreamoperation_processopen'>
+      writeStreamOperation._processOpen
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>An open doesn't have too much info, but we can glean two very important
+data points:</p>
+<ol>
+<li>the init timestamp tells us when the stream was created</li>
+<li>the last frame of the init stack tells us where <code>createWriteStream</code> was called.</li>
+</ol>
+
+
+  <div class='pre p1 fill-light mt0'>writeStreamOperation._processOpen(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the open step, pre-processed by the 
+<code>WriteStreamProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writestreamoperation_processtick'>
+      writeStreamOperation._processTick
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The WriteStream Tick gives us a lot of information. It is the same tick object that we process
+in the ReadStreamOperation to glean data about the read stream.
+It has an args array with the ReadStream and its ReadableState respectively.</p>
+<p>The ReadableState included the WritableState which the <a href="https://github.com/nodesource/ah-fs">ah-fs</a> pre-processor
+already plucked for us and added as the 3rd argument.
+Additionally it includes lots of functions including user functions registered with the
+WriteStream, i.e. <code>on('finish')</code>.</p>
+<p>Ergo the WriteStream provides us the following as part of the WritableState:</p>
+<ol>
+<li>the path to the file we are writing into</li>
+<li>the flags with which the file was opened</li>
+<li>the fd (assuming we are dealing with the tick triggered indirectly by the open)</li>
+</ol>
+<p>All callbacks on the _events of the ReadStream and WriteStream have been removed, but are present
+inside the functions object (see below).</p>
+<p>The information extracted from the tick is attached to a <code>stream</code> property
+provided with the <code>summary</code>.</p>
+
+
+  <div class='pre p1 fill-light mt0'>writeStreamOperation._processTick(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the tick step, pre-processed by the 
+<code>WriteStreamProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writestreamoperation_processwrite'>
+      writeStreamOperation._processwrite
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The write resource doesn't give us too much information.</p>
+<p>The stack traces originate in core and we don't see any registred
+user callbacks, as those are present on the stream instead.
+However we can count the amount of writes that occurred and deduce how
+long each write took from the <code>before</code> and <code>after</code> timestamps.</p>
+
+
+  <div class='pre p1 fill-light mt0'>writeStreamOperation._processwrite(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the write step, pre-processed by the 
+<code>WriteStreamProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='writestreamoperation_processclose'>
+      writeStreamOperation._processClose
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The main information we pull from the close resource is the <code>destroy</code> timestamp.</p>
+<p>Combined with the <code>init</code> timestamp of the open resource it allows us to deduce how long
+the write stream was active.</p>
+
+
+  <div class='pre p1 fill-light mt0'>writeStreamOperation._processClose(info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>info</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    information about the close step, pre-processed by the 
+<code>WriteStreamProcessor</code>
+.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
