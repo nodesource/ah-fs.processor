@@ -1,6 +1,6 @@
 {
   "name": "ah-fs.processor",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Analyzes ah-fs data specifically for fs.readFile cases.",
   "main": "ah-fs.processor.js",
   "scripts": {
