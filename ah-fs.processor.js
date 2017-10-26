@@ -9,7 +9,16 @@ const WriteStreamProcessor = require('./lib/write-stream.processor')
 // However {Read|Write}StreamProcessor share a stream tick, thus we need to
 // add logic to only remove those once both of these processors ran.
 // This could be via some flag and a callback that's passed to processActivities
-function process({ activities, includeActivities = false }) {
+
+/**
+ * @name processFileSystem
+ * @param {Object} $0
+ * @param {Map.<string, Object>} $0.activities a map of async activities hashed by id
+ * @param {boolean} [$0.includeActivities=false] if `true` the actual activities are appended to the output
+ *
+ * @return {Map.<number, Object} map of fs.readFile activities hashed by the fs resource id
+ */
+function processFileSystem({ activities, includeActivities = false }) {
   const processors = [
       ReadFileProcessor
     , ReadStreamProcessor
@@ -24,5 +33,5 @@ module.exports = {
   , ReadStreamProcessor
   , WriteFileProcessor
   , WriteStreamProcessor
-  , process
+  , processFileSystem
 }
